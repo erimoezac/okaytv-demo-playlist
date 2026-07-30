@@ -29,9 +29,16 @@ damit der Sprachfilter und die EPG-Länderzuordnung der App etwas zu tun haben.
 
 **Videos (Filme & Serienfolgen):** die Blender Open Movies — *Big Buck Bunny*,
 *Sintel*, *Elephants Dream*, *Tears of Steel*, *Cosmos Laundromat*. Alle unter
-Creative Commons Attribution (CC-BY) veröffentlicht, ausgeliefert vom Internet
-Archive und vom öffentlichen Test-CDN von Mux. © Blender Foundation,
-[blender.org](https://www.blender.org).
+Creative Commons Attribution (CC-BY) veröffentlicht, © Blender Foundation,
+[blender.org](https://www.blender.org). Sie liegen als 480p-Fassungen unter
+`vod/` in diesem Repository; die Originaldateien hängen als Release
+[`assets-v1`](../../releases/tag/assets-v1) daran.
+
+Die Dateinamen sind absichtlich reine Zahlen. OkayIPTV nimmt das letzte
+Pfadsegment einer Stream-URL als zusätzlichen TMDB-Suchbegriff — bei einem
+sprechenden Namen wie `tears_of_steel_720p.mp4` findet die App den echten Film
+und ersetzt damit Cover, Beschreibung und Hintergrundbild der Demo. Bei einem
+rein numerischen Segment lässt sie es bleiben, und die Demo-Cover bleiben stehen.
 
 **Live-Sender:** ausgewählt aus [Free-TV/IPTV](https://github.com/Free-TV/IPTV)
 und danach doppelt gefiltert — es bleiben nur Streams übrig, die vom CDN des

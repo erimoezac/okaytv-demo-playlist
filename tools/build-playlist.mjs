@@ -31,30 +31,38 @@ const baseArg = process.argv.find((a) => a.startsWith('--base='));
 const BASE = (baseArg ? baseArg.slice('--base='.length) : DEFAULT_BASE).replace(/\/+$/, '');
 
 // ---------------------------------------------------------------------------
-// Stream sources — Blender open movies (CC-BY), served by the Internet Archive
-// and Mux's public test CDN. Ten to fifteen minutes each, H.264/AAC, byte
-// ranges supported, so seeking and resume behave like a real VOD asset.
+// Stream sources — the Blender open movies (CC-BY), re-encoded to 480p and
+// served from this repository. Ten to fifteen minutes each, H.264/AAC,
+// faststart, byte ranges supported, so seeking and resume behave like a real
+// VOD asset.
+//
+// The numeric file names are not laziness. OkayIPTV feeds the last path
+// segment of the stream URL into its TMDB search (many providers put the real
+// release title in the file name), and a segment like `tears_of_steel_720p`
+// matches the actual film — the app then replaces the demo cover, the plot and
+// the backdrop with that film's real metadata. `extractTitleFromUrl` bails out
+// on a purely numeric segment, so `/vod/10004.mp4` keeps the demo's own
+// artwork on every tile.
 // ---------------------------------------------------------------------------
 const VIDEOS = [
-    { key: 'bbb', url: 'https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4', minutes: 10 },
-    { key: 'sintel', url: 'https://archive.org/download/Sintel/sintel-2048-stereo_512kb.mp4', minutes: 15 },
-    { key: 'ed', url: 'https://archive.org/download/ElephantsDream/ed_hd.mp4', minutes: 11 },
-    { key: 'tos', url: 'https://archive.org/download/Tears-of-Steel/tears_of_steel_720p.mp4', minutes: 12 },
-    { key: 'cosmos', url: 'https://archive.org/download/cosmos-laundromat/Cosmos%20Laundromat.mp4', minutes: 12 },
+    { key: 'bbb', url: `${BASE}/vod/10001.mp4`, minutes: 10 },
+    { key: 'sintel', url: `${BASE}/vod/10002.mp4`, minutes: 15 },
+    { key: 'ed', url: `${BASE}/vod/10003.mp4`, minutes: 11 },
+    { key: 'tos', url: `${BASE}/vod/10004.mp4`, minutes: 12 },
+    { key: 'cosmos', url: `${BASE}/vod/10005.mp4`, minutes: 12 },
 ];
 
 // Extra formats, kept in their own category so a tester can walk the player
 // paths on purpose: HLS/ABR (hls.js on web, AVPlayer natively), Matroska and
-// WebM (the VLCKit path on iOS), plus an HLS asset that ships several audio
-// tracks and subtitle renditions.
+// WebM (the VLCKit path on iOS), HEVC in an hvc1-tagged MP4, plus an HLS asset
+// that ships several audio tracks and subtitle renditions.
 const FORMAT_STREAMS = [
-    { title: 'Big Buck Bunny (HLS · Multi-Bitrate)', url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', brand: 'midnight-circuit' },
-    { title: 'Tears of Steel (HLS · Mehrere Tonspuren & Untertitel)', url: 'https://test-streams.mux.dev/tos_ismc/main.m3u8', brand: 'silent-atlas' },
-    { title: 'Tears of Steel (MKV · Matroska 1080p)', url: 'https://archive.org/download/Tears-of-Steel/tears_of_steel_1080p.mkv', brand: 'ashes-of-tomorrow' },
-    { title: 'Tears of Steel (WebM · VP8/Vorbis)', url: 'https://archive.org/download/Tears-of-Steel/tears_of_steel_1080p.webm', brand: 'neon-harbor' },
-    { title: 'Sintel (MP4 · 2048px Stereo)', url: 'https://archive.org/download/Sintel/sintel-2048-stereo.mp4', brand: 'northbound' },
-    { title: 'Elephants Dream (OGV · Theora/Vorbis)', url: 'https://archive.org/download/ElephantsDream/ed_hd.ogv', brand: 'midnight-circuit' },
-    { title: 'Big Buck Bunny (MP4 · 720p Surround 5.1)', url: 'https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4', brand: 'silent-atlas' },
+    { title: 'Testbild HLS · Multi-Bitrate (ABR)', url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', brand: 'midnight-circuit' },
+    { title: 'Testbild MP4 · H.264 480p', url: `${BASE}/vod/10001.mp4`, brand: 'northbound' },
+    { title: 'Testbild MKV · Matroska', url: `${BASE}/vod/10011.mkv`, brand: 'silent-atlas' },
+    { title: 'Testbild WebM · VP9/Opus', url: `${BASE}/vod/10012.webm`, brand: 'ashes-of-tomorrow' },
+    { title: 'Testbild MP4 · HEVC/H.265 720p', url: `${BASE}/vod/10013.mp4`, brand: 'neon-harbor' },
+    { title: 'Testbild MP4 · Langer Film 15 Minuten', url: `${BASE}/vod/10002.mp4`, brand: 'midnight-circuit' },
 ];
 
 // ---------------------------------------------------------------------------
