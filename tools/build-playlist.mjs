@@ -244,9 +244,17 @@ const buildMoviePool = () => {
             const [title, year] = MOVIE_TITLES[brand][i];
             const slug = slugify(title);
             const video = VIDEOS[pool.length % VIDEOS.length];
+            // Only the recent half carries its year in the title. Provider
+            // lists mix both spellings anyway, and here it also decides which
+            // titles the app puts in front of its top-preview enrichment: that
+            // pool is capped at 60 entries and sorted by year, descending.
+            // With a year on all eighty, the five real films (2006–2015) never
+            // reached it and the preview stayed empty — they are the only
+            // titles in this playlist a metadata provider can actually match.
+            const showYear = year >= 2020;
             pool.push({
                 id: `mv-${String(pool.length + 1).padStart(4, '0')}`,
-                title: `${title} (${year})`,
+                title: showYear ? `${title} (${year})` : title,
                 brand,
                 posterIndex: i,
                 url: movieStreamUrl(video, slug),
