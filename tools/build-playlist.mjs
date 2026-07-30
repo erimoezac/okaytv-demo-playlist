@@ -73,6 +73,34 @@ const FORMAT_STREAMS = [
 // ---------------------------------------------------------------------------
 const BRANDS = ['northbound', 'midnight-circuit', 'silent-atlas', 'ashes-of-tomorrow', 'neon-harbor'];
 
+// Titelbild, freigestelltes Titel-Logo und Kurzbeschreibung je Marke. Die App
+// liest sie über tvg-backdrop / tvg-titlelogo / tvg-plot und baut daraus den
+// Hero auf der Startseite — ohne dass sie einen Metadaten-Treffer braucht.
+// Ein Titel-Logo gibt es nur für zwei der fünf Marken; für die übrigen rendert
+// der Hero den Titel als Text, was genauso vorgesehen ist.
+const BRAND_ARTWORK = {
+    northbound: {
+        logo: 'northbound',
+        plot: 'Ein Fahrer bringt einen Konvoi über die letzte offene Passstraße nach Norden, bevor der Winter sie für Monate schließt. Als der Funk abreißt, wird aus der Route eine Frage von Vertrauen — und aus dem Wetter der kleinste seiner Gegner.',
+    },
+    'midnight-circuit': {
+        logo: 'midnight-circuit',
+        plot: 'In einer Stadt, die jede Bewegung protokolliert, sucht ein Ermittler nach einer Nacht, die aus allen Aufzeichnungen verschwunden ist. Je näher er kommt, desto klarer wird: Das System vergisst nichts — es wurde gebeten, sich zu erinnern.',
+    },
+    'silent-atlas': {
+        logo: null,
+        plot: 'Eine alte Seekarte führt an eine Küste, die auf keiner heutigen Karte steht. Was als Expedition beginnt, wird zur Suche nach den Leuten, die dort einmal gelebt haben — und nach dem Grund, warum niemand ihre Spuren aufschreiben wollte.',
+    },
+    'ashes-of-tomorrow': {
+        logo: null,
+        plot: 'Jahre nach dem Ende sammelt eine Überlebende ein, was von den Städten übrig ist: Werkzeuge, Namen, Erinnerungen. Als aus dem Süden ein Funkspruch kommt, muss sie entscheiden, ob die Zukunft ein Ort ist, zu dem man zurückgeht.',
+    },
+    'neon-harbor': {
+        logo: null,
+        plot: 'Zwei Ermittler, ein Hafen, eine Leiche zwischen den Containern. Ihre Fälle laufen auf dieselbe Reederei zu — und auf eine Nachtschicht, in der beide entscheiden müssen, wem im Revier sie noch trauen.',
+    },
+};
+
 const MOVIE_TITLES = {
     'midnight-circuit': [
         ['Midnight Circuit', 2019], ['Midnight Circuit II – Overdrive', 2021],
@@ -285,11 +313,18 @@ const buildSeriesPool = () => {
 const lines = [];
 const push = (line) => lines.push(line);
 
-const extinf = ({ duration = -1, id, name, logo, group, tvgName }) => {
+const extinf = ({ duration = -1, id, name, logo, group, tvgName, brand = null }) => {
+    const artwork = brand ? BRAND_ARTWORK[brand] : null;
     const attrs = [
         `tvg-id="${id}"`,
         `tvg-name="${tvgName || name}"`,
         `tvg-logo="${logo}"`,
+        // Titelbild, Titel-Logo und Beschreibung für den Hero. Kein Standard,
+        // aber die Schreibweise, die verbreitete Listen für Zusatz-Artwork
+        // benutzen — Player, die sie nicht kennen, ignorieren sie folgenlos.
+        ...(artwork ? [`tvg-backdrop="${BASE}/hero/${brand}.jpg"`] : []),
+        ...(artwork?.logo ? [`tvg-titlelogo="${BASE}/logos/${artwork.logo}.png"`] : []),
+        ...(artwork?.plot ? [`tvg-plot="${artwork.plot}"`] : []),
         `group-title="${group}"`,
     ].join(' ');
     return `#EXTINF:${duration} ${attrs},${name}`;
@@ -354,6 +389,7 @@ const main = () => {
                 name: movie.title,
                 logo: posterUrl(movie.brand, movie.posterIndex),
                 group: category.name,
+                brand: movie.brand,
             }));
             push(movie.url);
         }
@@ -404,6 +440,7 @@ const main = () => {
                         name: `${show.title} ${seasonTag} ${episodeTag} - ${episodeName}`,
                         logo: posterUrl(show.brand, show.posterIndex),
                         group: category.name,
+                        brand: show.brand,
                     }));
                     push(episodeStreamUrl(video, show.slug, season, episode));
                 }
@@ -421,6 +458,7 @@ const main = () => {
             name: `${germanShow.title} Staffel 1 Folge ${episode} - ${EPISODE_NAMES[episode]}`,
             logo: posterUrl(germanShow.brand, germanShow.posterIndex),
             group: 'DE | Serien mit Staffel-Schreibweise',
+            brand: germanShow.brand,
         }));
         push(episodeStreamUrl(VIDEOS[episode % VIDEOS.length], `${germanShow.slug}-de`, 1, episode));
     }
@@ -436,6 +474,7 @@ const main = () => {
                 name: `${show.title} S0${season} (Komplette Staffel)`,
                 logo: posterUrl(show.brand, show.posterIndex),
                 group: 'DE | Serien Boxsets',
+                brand: show.brand,
             }));
             push(`${VIDEOS[season % VIDEOS.length].url}?nfsrc=/series/${show.slug}-box/s0${season}.mp4`);
         });
