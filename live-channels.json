@@ -1,0 +1,738 @@
+[
+  {
+    "name": "Servus TV",
+    "group": "AT | TV Sender",
+    "tvgId": "ServusTVOsterreich.at",
+    "tvgName": "Servus TV",
+    "logo": "https://i.imgur.com/zDWhSxq.png",
+    "url": "https://rbmn-live.akamaized.net/hls/live/2002825/geoSTVATweb/master.m3u8"
+  },
+  {
+    "name": "ICI RDI",
+    "group": "CA | TV Channels",
+    "tvgId": "IciRDI.ca",
+    "tvgName": "ICI RDI",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/ICI_RDI_logo.svg/640px-ICI_RDI_logo.svg.png",
+    "url": "https://rcavlive.akamaized.net/hls/live/704025/xcanrdi/master.m3u8"
+  },
+  {
+    "name": "ICI Télé HD",
+    "group": "CA | TV Channels",
+    "tvgId": "",
+    "tvgName": "ICI Télé HD",
+    "logo": "https://i.imgur.com/HsSi3NV.png",
+    "url": "https://rcavlive.akamaized.net/hls/live/696615/xcancbft/master.m3u8"
+  },
+  {
+    "name": "MBC Masr 1",
+    "group": "AR | قنوات",
+    "tvgId": "MBCMasr1.eg",
+    "tvgName": "MBC Masr 1",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7c/MBC_Masr_Logo.png",
+    "url": "https://mbc1-enc.edgenextcdn.net/out/v1/d5036cabf11e45bf9d0db410ca135c18/index.m3u8"
+  },
+  {
+    "name": "Arte",
+    "group": "FR | Chaînes TV",
+    "tvgId": "ARTEFrench.fr",
+    "tvgName": "Arte",
+    "logo": "https://api-cdn.arte.tv/img/v2/image/j4EoSJjX26uySVWdmt3EmS/1920x1080",
+    "url": "https://artesimulcast.akamaized.net/hls/live/2031003/artelive_fr/index.m3u8"
+  },
+  {
+    "name": "CGTN Français",
+    "group": "FR | Chaînes TV",
+    "tvgId": "CGTNFrench.cn",
+    "tvgName": "CGTN Français",
+    "logo": "https://i.imgur.com/fMsJYzl.png",
+    "url": "https://news.cgtn.com/resource/live/french/cgtn-f.m3u8"
+  },
+  {
+    "name": "TV5 Monde Info",
+    "group": "FR | Chaînes TV",
+    "tvgId": "TV5MondeInfo.fr",
+    "tvgName": "TV5 Monde Info",
+    "logo": "https://i.imgur.com/NcysrWH.png",
+    "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(info)/index.m3u8"
+  },
+  {
+    "name": "TV5 Monde Europe",
+    "group": "FR | Chaînes TV",
+    "tvgId": "TV5MondeEurope.fr",
+    "tvgName": "TV5 Monde Europe",
+    "logo": "https://i.imgur.com/uPmwTo9.png",
+    "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(europe)/index.m3u8"
+  },
+  {
+    "name": "Das Erste",
+    "group": "DE | TV Sender",
+    "tvgId": "DasErste.de",
+    "tvgName": "Das Erste",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Das_Erste_2014.svg/640px-Das_Erste_2014.svg.png",
+    "url": "https://daserste-live.ard-mcdn.de/daserste/live/hls/de/master.m3u8"
+  },
+  {
+    "name": "ZDF",
+    "group": "DE | TV Sender",
+    "tvgId": "ZDF.de",
+    "tvgName": "ZDF",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/ZDF_logo.svg/640px-ZDF_logo.svg.png",
+    "url": "https://zdf-hls-15.akamaized.net/hls/live/2016498/de/veryhigh/master.m3u8"
+  },
+  {
+    "name": "3sat",
+    "group": "DE | TV Sender",
+    "tvgId": "3sat.de",
+    "tvgName": "3sat",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/3sat_2019.svg/640px-3sat_2019.svg.png",
+    "url": "https://zdf-hls-18.akamaized.net/hls/live/2016501/dach/veryhigh/master.m3u8"
+  },
+  {
+    "name": "ARD Alpha",
+    "group": "DE | TV Sender",
+    "tvgId": "ARDalpha.de",
+    "tvgName": "ARD Alpha",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/ARD_alpha.svg/640px-ARD_alpha.svg.png",
+    "url": "https://mcdn.br.de/br/fs/ard_alpha/hls/de/master.m3u8"
+  },
+  {
+    "name": "ARTE",
+    "group": "DE | TV Sender",
+    "tvgId": "ARTEDeutsch.de",
+    "tvgName": "ARTE",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Arte_Logo_2017.svg/186px-Arte_Logo_2017.svg.png",
+    "url": "https://artesimulcast.akamaized.net/hls/live/2030993/artelive_de/index.m3u8"
+  },
+  {
+    "name": "DELUXE MUSIC",
+    "group": "DE | TV Sender",
+    "tvgId": "DeluxeMusic.de",
+    "tvgName": "DELUXE MUSIC",
+    "logo": "https://i.imgur.com/E65GQN9.png",
+    "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/13456/13456_264_live.m3u8"
+  },
+  {
+    "name": "DELUXE MUSIC DANCE BY KONTOR",
+    "group": "DE | TV Sender",
+    "tvgId": "DeluxeMusicDanceByKontor.de",
+    "tvgName": "DELUXE MUSIC DANCE BY KONTOR",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Deluxe_Dance_by_Kontor_Logo_2023.svg/666px-Deluxe_Dance_by_Kontor_Logo_2023.svg.png",
+    "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/64733/64733_264_live.m3u8"
+  },
+  {
+    "name": "DELUXE MUSIC RAP",
+    "group": "DE | TV Sender",
+    "tvgId": "DeLuxeMusicRap.de",
+    "tvgName": "DELUXE MUSIC RAP",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Deluxe_Rap_Logo_2023.svg/666px-Deluxe_Rap_Logo_2023.svg.png",
+    "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/65183/65183_264_live.m3u8"
+  },
+  {
+    "name": "KiKa",
+    "group": "DE | TV Sender",
+    "tvgId": "KIKA.de",
+    "tvgName": "KiKa",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kika_2012.svg/640px-Kika_2012.svg.png",
+    "url": "https://kikageohls.akamaized.net/hls/live/2022693/livetvkika_de/master.m3u8"
+  },
+  {
+    "name": "ONE",
+    "group": "DE | TV Sender",
+    "tvgId": "One.de",
+    "tvgName": "ONE",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/One_2022.svg/640px-One_2022.svg.png",
+    "url": "https://mcdn-one.ard.de/ardone/hls/master.m3u8"
+  },
+  {
+    "name": "Phoenix",
+    "group": "DE | TV Sender",
+    "tvgId": "Phoenix.de",
+    "tvgName": "Phoenix",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Phoenix-logo-2018.svg/640px-Phoenix-logo-2018.svg.png",
+    "url": "https://zdf-hls-19.akamaized.net/hls/live/2016502/de/veryhigh/master.m3u8"
+  },
+  {
+    "name": "Tagesschau24",
+    "group": "DE | TV Sender",
+    "tvgId": "tagesschau24.de",
+    "tvgName": "Tagesschau24",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Tagesschau24-2012.svg/640px-Tagesschau24-2012.svg.png",
+    "url": "https://tagesschau.akamaized.net/hls/live/2020115/tagesschau/tagesschau_1/master.m3u8"
+  },
+  {
+    "name": "Welt",
+    "group": "DE | TV Sender",
+    "tvgId": "Welt.de",
+    "tvgName": "Welt",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Welt_TV_Logo_2016.svg/640px-Welt_TV_Logo_2016.svg.png",
+    "url": "https://w-live2weltcms.akamaized.net/hls/live/2041019/Welt-LivePGM/index.m3u8"
+  },
+  {
+    "name": "ZDFinfo",
+    "group": "DE | TV Sender",
+    "tvgId": "ZDFinfo.de",
+    "tvgName": "ZDFinfo",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/ZDFinfo_2011.svg/640px-ZDFinfo_2011.svg.png",
+    "url": "https://zdf-hls-17.akamaized.net/hls/live/2016500/de/veryhigh/master.m3u8"
+  },
+  {
+    "name": "ZDFneo",
+    "group": "DE | TV Sender",
+    "tvgId": "ZDFneo.de",
+    "tvgName": "ZDFneo",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ZDFneo2017_Logo.svg/569px-ZDFneo2017_Logo.svg.png",
+    "url": "https://zdf-hls-16.akamaized.net/hls/live/2016499/de/veryhigh/master.m3u8"
+  },
+  {
+    "name": "BR Nord",
+    "group": "DE | TV Sender",
+    "tvgId": "BRFernsehenNord.de",
+    "tvgName": "BR Nord",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Logo_BR_Fernsehen_2021.svg/768px-Logo_BR_Fernsehen_2021.svg.png",
+    "url": "https://mcdn.br.de/br/fs/bfs_nord/hls/de/master.m3u8"
+  },
+  {
+    "name": "HR",
+    "group": "DE | TV Sender",
+    "tvgId": "HRFernsehen.de",
+    "tvgName": "HR",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/HR-Fernsehen_Logo_2023.svg/640px-HR-Fernsehen_Logo_2023.svg.png",
+    "url": "https://hrhls.akamaized.net/hls/live/2024525/hrhls/master.m3u8"
+  },
+  {
+    "name": "MDR Sachsen",
+    "group": "DE | TV Sender",
+    "tvgId": "MDRFernsehenSachsen.de",
+    "tvgName": "MDR Sachsen",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/MDR_Logo_2017.svg/640px-MDR_Logo_2017.svg.png",
+    "url": "https://mdrtvsnhls.akamaized.net/hls/live/2016928/mdrtvsn/master.m3u8"
+  },
+  {
+    "name": "MDR Sachsen-Anhalt",
+    "group": "DE | TV Sender",
+    "tvgId": "MDRFernsehenSachsenAnhalt.de",
+    "tvgName": "MDR Sachsen-Anhalt",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/MDR_Logo_2017.svg/640px-MDR_Logo_2017.svg.png",
+    "url": "https://mdrtvsahls.akamaized.net/hls/live/2016879/mdrtvsa/master.m3u8"
+  },
+  {
+    "name": "MDR Thüringen",
+    "group": "DE | TV Sender",
+    "tvgId": "MDRFernsehenThuringen.de",
+    "tvgName": "MDR Thüringen",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/MDR_Logo_2017.svg/640px-MDR_Logo_2017.svg.png",
+    "url": "https://mdrtvthhls.akamaized.net/hls/live/2016880/mdrtvth/master.m3u8"
+  },
+  {
+    "name": "NDR Hamburg",
+    "group": "DE | TV Sender",
+    "tvgId": "NDRFernsehenHamburg.de",
+    "tvgName": "NDR Hamburg",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Logo_NDR_Fernsehen_2017.svg/578px-Logo_NDR_Fernsehen_2017.svg.png",
+    "url": "https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_hh/master.m3u8"
+  },
+  {
+    "name": "NDR Mecklenburg-Vorpommern",
+    "group": "DE | TV Sender",
+    "tvgId": "NDRFernsehenMecklenburgVorpommern.de",
+    "tvgName": "NDR Mecklenburg-Vorpommern",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Logo_NDR_Fernsehen_2017.svg/578px-Logo_NDR_Fernsehen_2017.svg.png",
+    "url": "https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_mv/master.m3u8"
+  },
+  {
+    "name": "NDR Niedersachsen",
+    "group": "DE | TV Sender",
+    "tvgId": "NDRFernsehenNiedersachsen.de",
+    "tvgName": "NDR Niedersachsen",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Logo_NDR_Fernsehen_2017.svg/578px-Logo_NDR_Fernsehen_2017.svg.png",
+    "url": "https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_nds/master.m3u8"
+  },
+  {
+    "name": "NDR Schleswig-Holstein",
+    "group": "DE | TV Sender",
+    "tvgId": "NDRFernsehenSchleswigHolstein.de",
+    "tvgName": "NDR Schleswig-Holstein",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Logo_NDR_Fernsehen_2017.svg/578px-Logo_NDR_Fernsehen_2017.svg.png",
+    "url": "https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_sh/master.m3u8"
+  },
+  {
+    "name": "Radio Bremen",
+    "group": "DE | TV Sender",
+    "tvgId": "RadioBremenFernsehen.de",
+    "tvgName": "Radio Bremen",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Logo_Radio_Bremen.svg/640px-Logo_Radio_Bremen.svg.png",
+    "url": "https://rbhlslive.akamaized.net/hls/live/2020435/rbfs/master.m3u8"
+  },
+  {
+    "name": "RBB Berlin",
+    "group": "DE | TV Sender",
+    "tvgId": "RBBBerlin.de",
+    "tvgName": "RBB Berlin",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Rbb_Fernsehen_Logo_2017.08.svg/640px-Rbb_Fernsehen_Logo_2017.08.svg.png",
+    "url": "https://rbb-hls-berlin.akamaized.net/hls/live/2017824/rbb_berlin/master.m3u8"
+  },
+  {
+    "name": "RBB Brandenburg",
+    "group": "DE | TV Sender",
+    "tvgId": "RBBBrandenburg.de",
+    "tvgName": "RBB Brandenburg",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Rbb_Fernsehen_Logo_2017.08.svg/640px-Rbb_Fernsehen_Logo_2017.08.svg.png",
+    "url": "https://rbb-hls-brandenburg.akamaized.net/hls/live/2017825/rbb_brandenburg/master.m3u8"
+  },
+  {
+    "name": "SR",
+    "group": "DE | TV Sender",
+    "tvgId": "SRFernsehen.de",
+    "tvgName": "SR",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/SR_Fernsehen_Logo_2023.svg/538px-SR_Fernsehen_Logo_2023.svg.png",
+    "url": "https://srfs.akamaized.net/hls/live/689649/srfsgeo/index.m3u8"
+  },
+  {
+    "name": "SWR Baden-Württemberg",
+    "group": "DE | TV Sender",
+    "tvgId": "SWRFernsehenBadenWurttemberg.de",
+    "tvgName": "SWR Baden-Württemberg",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/SWR_Logo_2023.svg/640px-SWR_Logo_2023.svg.png",
+    "url": "https://swrbwd-hls.akamaized.net/hls/live/2018672/swrbwd/master.m3u8"
+  },
+  {
+    "name": "SWR Rheinland-Pfalz",
+    "group": "DE | TV Sender",
+    "tvgId": "SWRFernsehenRheinlandPfalz.de",
+    "tvgName": "SWR Rheinland-Pfalz",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/SWR_Logo_2023.svg/640px-SWR_Logo_2023.svg.png",
+    "url": "https://swrrpd-hls.akamaized.net/hls/live/2018676/swrrpd/master.m3u8"
+  },
+  {
+    "name": "WDR",
+    "group": "DE | TV Sender",
+    "tvgId": "WDR.de",
+    "tvgName": "WDR",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wdr_fernsehen_logo_2016.svg/640px-Wdr_fernsehen_logo_2016.svg.png",
+    "url": "https://wdrfs247.akamaized.net/hls/live/681509/wdr_msl4_fs247/index.m3u8"
+  },
+  {
+    "name": "NDR International",
+    "group": "DE | TV Sender",
+    "tvgId": "NDRFernsehenInternational.de",
+    "tvgName": "NDR International",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Logo_NDR_Fernsehen_2017.svg/578px-Logo_NDR_Fernsehen_2017.svg.png",
+    "url": "https://ndrint.akamaized.net/hls/live/2020766/ndr_int/index.m3u8"
+  },
+  {
+    "name": "ANT1",
+    "group": "GR | Κανάλια",
+    "tvgId": "ANT1.gr",
+    "tvgName": "ANT1",
+    "logo": "https://i.imgur.com/xDdVa9U.png",
+    "url": "https://mcdn.antennaplus.gr/live/media0/Ant1/HLS/Ant1.m3u8"
+  },
+  {
+    "name": "MAK TV",
+    "group": "GR | Κανάλια",
+    "tvgId": "MakTV.gr",
+    "tvgName": "MAK TV",
+    "logo": "https://i.imgur.com/90iDHbQ.png",
+    "url": "https://mcdn.antennaplus.gr/live/media0/MAK/HLS/MAK.m3u8"
+  },
+  {
+    "name": "R101 TV",
+    "group": "IT | Canali TV",
+    "tvgId": "R101TV.it",
+    "tvgName": "R101 TV",
+    "logo": "https://i.imgur.com/mWeEa9T.png",
+    "url": "https://live02-seg.msr.cdn.mediaset.net/live/ch-er/er-clr.isml/index.m3u8"
+  },
+  {
+    "name": "Radio Montecarlo TV",
+    "group": "IT | Canali TV",
+    "tvgId": "RadioMonteCarloTV.it",
+    "tvgName": "Radio Montecarlo TV",
+    "logo": "https://i.imgur.com/3TMMXmS.png",
+    "url": "https://live02-seg.msr.cdn.mediaset.net/live/ch-bb/bb-clr.isml/index.m3u8"
+  },
+  {
+    "name": "Virgin Radio TV",
+    "group": "IT | Canali TV",
+    "tvgId": "VirginRadioTV.it",
+    "tvgName": "Virgin Radio TV",
+    "logo": "https://i.imgur.com/7Im3HI1.png",
+    "url": "https://live02-seg.msr.cdn.mediaset.net/live/ch-ew/ew-clr.isml/index.m3u8"
+  },
+  {
+    "name": "NHK WORLD JAPAN",
+    "group": "JP | テレビ",
+    "tvgId": "NHKWorldJapan.jp",
+    "tvgName": "NHK WORLD JAPAN",
+    "logo": "https://i.imgur.com/Mhw1Ihk.png",
+    "url": "https://master.nhkworld.jp/nhkworld-tv/playlist/live.m3u8"
+  },
+  {
+    "name": "TOKYO MX チャンネル",
+    "group": "JP | テレビ",
+    "tvgId": "",
+    "tvgName": "TOKYO MX チャンネル",
+    "logo": "https://channel.rakuten.co.jp/service/img/logo/chlogo-with-number/108_mx.png",
+    "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01287-rakutentvjapan-tokyomx-cmaf-rakutenjp/playlist.m3u8"
+  },
+  {
+    "name": "EBS 1",
+    "group": "KR | TV",
+    "tvgId": "EBS1TV.kr",
+    "tvgName": "EBS 1",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/EBS_1TV_Logo.svg/500px-EBS_1TV_Logo.svg.png",
+    "url": "https://ebsonair.ebs.co.kr/ebs1familypc/familypc1m/playlist.m3u8"
+  },
+  {
+    "name": "EBS 2",
+    "group": "KR | TV",
+    "tvgId": "EBS2TV.kr",
+    "tvgName": "EBS 2",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/EBS_2TV_Logo.svg/500px-EBS_2TV_Logo.svg.png",
+    "url": "https://ebsonair.ebs.co.kr/ebs2familypc/familypc1m/playlist.m3u8"
+  },
+  {
+    "name": "EBS Kids",
+    "group": "KR | TV",
+    "tvgId": "EBSKids.kr",
+    "tvgName": "EBS Kids",
+    "logo": "https://i.imgur.com/62oo8Bx.png",
+    "url": "https://ebsonair.ebs.co.kr/ebsufamilypc/familypc1m/playlist.m3u8"
+  },
+  {
+    "name": "EBS Plus 1",
+    "group": "KR | TV",
+    "tvgId": "EBSPlus1.kr",
+    "tvgName": "EBS Plus 1",
+    "logo": "https://i.imgur.com/ImUHRG2.png",
+    "url": "https://ebsonair.ebs.co.kr/plus1familypc/familypc1m/playlist.m3u8"
+  },
+  {
+    "name": "EBS Plus 2",
+    "group": "KR | TV",
+    "tvgId": "EBSPlus2.kr",
+    "tvgName": "EBS Plus 2",
+    "logo": "https://i.imgur.com/mgFRZFq.png",
+    "url": "https://ebsonair.ebs.co.kr/plus2familypc/familypc1m/playlist.m3u8"
+  },
+  {
+    "name": "EBS English",
+    "group": "KR | TV",
+    "tvgId": "EBSEnglish.kr",
+    "tvgName": "EBS English",
+    "logo": "https://i.imgur.com/qceaIf7.png",
+    "url": "https://ebsonair.ebs.co.kr/plus3familypc/familypc1m/playlist.m3u8"
+  },
+  {
+    "name": "Qatar Television",
+    "group": "AR | قنوات",
+    "tvgId": "QatarTelevision.qa",
+    "tvgName": "Qatar Television",
+    "logo": "https://i.imgur.com/N5RB4sp.png",
+    "url": "https://qatartv.akamaized.net/hls/live/20000609/qtv1/master.m3u8"
+  },
+  {
+    "name": "Qatar Television 2",
+    "group": "AR | قنوات",
+    "tvgId": "QatarTelevision2.qa",
+    "tvgName": "Qatar Television 2",
+    "logo": "https://i.imgur.com/iWJxDUm.png",
+    "url": "https://qatartv.akamaized.net/hls/live/20000611/qtv2/master.m3u8"
+  },
+  {
+    "name": "Qatar Television The Holy Quran",
+    "group": "AR | قنوات",
+    "tvgId": "QatarTelevisionTheHolyQuran.qa",
+    "tvgName": "Qatar Television The Holy Quran",
+    "logo": "https://i.imgur.com/N5RB4sp.png",
+    "url": "https://qatartv.akamaized.net/hls/live/20000612/qtvquran/master1080p.m3u8"
+  },
+  {
+    "name": "Al Jazeera Mubasher",
+    "group": "AR | قنوات",
+    "tvgId": "AlJazeeraMubasher.qa",
+    "tvgName": "Al Jazeera Mubasher",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/9/90/Al_Jazeera_Mubasher_logo.png",
+    "url": "https://live-hls-web-ajm.getaj.net/AJM/index.m3u8"
+  },
+  {
+    "name": "euronews",
+    "group": "ES | Canales TV",
+    "tvgId": "Euronews.es",
+    "tvgName": "euronews",
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/international/euro-news-int.png",
+    "url": "https://euronews-live-spa-es.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6571/bitok/eyJzdGlkIjoiMDA0YjY0NTMtYjY2MC00ZTZkLTlkNzEtMTk3YTM3ZDZhZWIxIiwibWt0IjoiZXMiLCJjaCI6NjU3MSwicHRmIjoxfQ==/26034/euronews-es.m3u8"
+  },
+  {
+    "name": "La 2 (Canarias)",
+    "group": "ES | Canales TV",
+    "tvgId": "La2Canarias.es",
+    "tvgName": "La 2 (Canarias)",
+    "logo": "https://i.imgur.com/DmuTwDw.png",
+    "url": "https://ztnr.rtve.es/ztnr/5468585.m3u8"
+  },
+  {
+    "name": "QVC UK",
+    "group": "UK | TV Channels",
+    "tvgId": "QVCUK.uk",
+    "tvgName": "QVC UK",
+    "logo": "https://i.imgur.com/6TWUVrh.png",
+    "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qvc/3/3.m3u8"
+  },
+  {
+    "name": "Bloomberg TV",
+    "group": "UK | TV Channels",
+    "tvgId": "BloombergTVEurope.uk",
+    "tvgName": "Bloomberg TV",
+    "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1074.png",
+    "url": "https://bloomberg.com/media-manifest/streams/eu.m3u8"
+  },
+  {
+    "name": "QVC Beauty",
+    "group": "UK | TV Channels",
+    "tvgId": "QVCBeautyUK.uk",
+    "tvgName": "QVC Beauty",
+    "logo": "https://i.imgur.com/ZBHtqk1.png",
+    "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qby/3/3.m3u8"
+  },
+  {
+    "name": "QVC Extra",
+    "group": "UK | TV Channels",
+    "tvgId": "QVCExtraUK.uk",
+    "tvgName": "QVC Extra",
+    "logo": "https://i.imgur.com/TIe5T9Z.png",
+    "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qex/3/3.m3u8"
+  },
+  {
+    "name": "QVC Style",
+    "group": "UK | TV Channels",
+    "tvgId": "QVCStyleUK.uk",
+    "tvgName": "QVC Style",
+    "logo": "https://i.imgur.com/6HZlLL3.png",
+    "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qst/3/3.m3u8"
+  },
+  {
+    "name": "Now 70s",
+    "group": "UK | TV Channels",
+    "tvgId": "Now70s.uk",
+    "tvgName": "Now 70s",
+    "logo": "https://i.imgur.com/qiCCX5X.png",
+    "url": "https://lightning-now70s-samsungnz.amagi.tv/playlist.m3u8"
+  },
+  {
+    "name": "Now 80s",
+    "group": "UK | TV Channels",
+    "tvgId": "Now80s.uk",
+    "tvgName": "Now 80s",
+    "logo": "https://i.imgur.com/8paz37m.png",
+    "url": "https://lightning-now80s-samsunguk.amagi.tv/playlist.m3u8"
+  },
+  {
+    "name": "Now Rock",
+    "group": "UK | TV Channels",
+    "tvgId": "NowRock.uk",
+    "tvgName": "Now Rock",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/8/89/NOW_Rock_logo.png",
+    "url": "https://lightning-now90s-samsungnz.amagi.tv/playlist.m3u8"
+  },
+  {
+    "name": "BBC World Service",
+    "group": "UK | TV Channels",
+    "tvgId": "BBCRadioWorldService.uk",
+    "tvgName": "BBC World Service",
+    "logo": "https://experiencersinternational.github.io/tvsetup/tvg-ico/bbcws-epg.png",
+    "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_world_service.m3u8"
+  },
+  {
+    "name": "Al Arabiya Business",
+    "group": "AR | قنوات",
+    "tvgId": "AlArabiyaBusiness.ae",
+    "tvgName": "Al Arabiya Business",
+    "logo": "https://i.imgur.com/eEV4r6J.jpg",
+    "url": "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8"
+  },
+  {
+    "name": "MBC Drama",
+    "group": "AR | قنوات",
+    "tvgId": "MBCDrama.ae",
+    "tvgName": "MBC Drama",
+    "logo": "https://i.imgur.com/g5PWnqp.png",
+    "url": "https://mbc1-enc.edgenextcdn.net/out/v1/b0b3a0e6750d4408bb86d703d5feffd1/index.m3u8"
+  },
+  {
+    "name": "Wanasah",
+    "group": "AR | قنوات",
+    "tvgId": "Wanasah.ae",
+    "tvgName": "Wanasah",
+    "logo": "https://i.imgur.com/nLtiXNf.png",
+    "url": "https://shls-wanasah-prod-dub.shahid.net/out/v1/c84ef3128e564b74a6a796e8b6287de6/index.m3u8"
+  },
+  {
+    "name": "Bloomberg",
+    "group": "US | TV Channels",
+    "tvgId": "BloombergTelevision.us",
+    "tvgName": "Bloomberg",
+    "logo": "https://i.imgur.com/VnCcH73.png",
+    "url": "https://bloomberg.com/media-manifest/streams/us.m3u8"
+  },
+  {
+    "name": "NASA TV Media",
+    "group": "US | TV Channels",
+    "tvgId": "NASATVMedia.us",
+    "tvgName": "NASA TV Media",
+    "logo": "https://i.imgur.com/rmyfoOI.png",
+    "url": "https://ntv2.akamaized.net/hls/live/2013923/NASA-NTV2-HLS/master.m3u8"
+  },
+  {
+    "name": "BBC Food",
+    "group": "US | TV Channels",
+    "tvgId": "BBCFood.us",
+    "tvgName": "BBC Food",
+    "logo": "https://i.imgur.com/N3xiz4m.png",
+    "url": "https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5fb5844bf5514d0007945bda/master.m3u8?deviceId=channel&deviceModel=web&deviceVersion=1.0&appVersion=1.0&deviceType=rokuChannel&deviceMake=rokuChannel&deviceDNT=1&advertisingId=channel&embedPartner=rokuChannel&appName=rokuchannel&is_lat=1&bmodel=bm1&content=channel&platform=web&tags=ROKU_CONTENT_TAGS&coppa=false&content_type=livefeed&rdid=channel&genre=ROKU_ADS_CONTENT_GENRE&content_rating=ROKU_ADS_CONTENT_RATING&studio_id=viacom&channel_id=channel"
+  },
+  {
+    "name": "BBC Home",
+    "group": "US | TV Channels",
+    "tvgId": "BBCHome.us",
+    "tvgName": "BBC Home",
+    "logo": "https://i.imgur.com/Ii8DX1x.png",
+    "url": "https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5fb5836fe745b600070fc743/master.m3u8?deviceId=channel&deviceModel=web&deviceVersion=1.0&appVersion=1.0&deviceType=rokuChannel&deviceMake=rokuChannel&deviceDNT=1&advertisingId=channel&embedPartner=rokuChannel&appName=rokuchannel&is_lat=1&bmodel=bm1&content=channel&platform=web&tags=ROKU_CONTENT_TAGS&coppa=false&content_type=livefeed&rdid=channel&genre=ROKU_ADS_CONTENT_GENRE&content_rating=ROKU_ADS_CONTENT_RATING&studio_id=viacom&channel_id=channel"
+  },
+  {
+    "name": "CGTN Documentary English",
+    "group": "EN | Doku & Wissen",
+    "tvgId": "CGTNDocumentary.cn",
+    "tvgName": "CGTN Documentary English",
+    "logo": "https://i.imgur.com/JHv0WxM.png",
+    "url": "https://news.cgtn.com/resource/live/document/cgtn-doc.m3u8"
+  },
+  {
+    "name": "Al Jazeera العربية",
+    "group": "AR | أخبار",
+    "tvgId": "AlJazeeraChannel.qa",
+    "tvgName": "Al Jazeera العربية",
+    "logo": "https://i.imgur.com/BB93NQP.png",
+    "url": "https://live-hls-web-aja.getaj.net/AJA/index.m3u8"
+  },
+  {
+    "name": "Al Arabiya العربية",
+    "group": "AR | أخبار",
+    "tvgId": "AlArabiya.ae",
+    "tvgName": "Al Arabiya العربية",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Al-Arabiya_new_logo.svg/640px-Al-Arabiya_new_logo.svg.png",
+    "url": "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8"
+  },
+  {
+    "name": "Al Hadath العربية",
+    "group": "AR | أخبار",
+    "tvgId": "AlHadath.sa",
+    "tvgName": "Al Hadath العربية",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Al_Hadath_TV_logo_2023.svg",
+    "url": "https://live.alarabiya.net/alarabiapublish/alhadath.smil/alarabiapublish/alhadath_1080p/chunks.m3u8"
+  },
+  {
+    "name": "DW العربية",
+    "group": "AR | أخبار",
+    "tvgId": "DWArabic.de",
+    "tvgName": "DW العربية",
+    "logo": "https://i.imgur.com/A1xzjOI.png",
+    "url": "https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/index.m3u8"
+  },
+  {
+    "name": "CGTN العربية",
+    "group": "AR | أخبار",
+    "tvgId": "CGTNArabic.cn",
+    "tvgName": "CGTN العربية",
+    "logo": "https://i.imgur.com/fMsJYzl.png",
+    "url": "https://arabic-livews.cgtn.com/hls/LSveq57bErWLinBnxosqjisZ220802LSTefTAS9zc9mpU08y3np9TH220802cd/playlist.m3u8"
+  },
+  {
+    "name": "DW",
+    "group": "EN | News",
+    "tvgId": "DWEnglish.de",
+    "tvgName": "DW",
+    "logo": "https://i.imgur.com/A1xzjOI.png",
+    "url": "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8"
+  },
+  {
+    "name": "Al Jazeera",
+    "group": "EN | News",
+    "tvgId": "AlJazeeraEnglish.qa",
+    "tvgName": "Al Jazeera",
+    "logo": "https://i.imgur.com/BB93NQP.png",
+    "url": "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8"
+  },
+  {
+    "name": "CGTN",
+    "group": "EN | News",
+    "tvgId": "CGTN.cn",
+    "tvgName": "CGTN",
+    "logo": "https://i.imgur.com/fMsJYzl.png",
+    "url": "https://news.cgtn.com/resource/live/english/cgtn-news.m3u8"
+  },
+  {
+    "name": "CBS News",
+    "group": "EN | News",
+    "tvgId": "CBSNews.us",
+    "tvgName": "CBS News",
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cbs-news-us.png",
+    "url": "https://dai.google.com/linear/hls/event/Sid4xiTQTkCT1SLu6rjUSQ/master.m3u8"
+  },
+  {
+    "name": "Bloomberg TV+",
+    "group": "EN | Business",
+    "tvgId": "BloombergTVPlus.us",
+    "tvgName": "Bloomberg TV+",
+    "logo": "https://i.imgur.com/xGlToly.png",
+    "url": "https://bloomberg.com/media-manifest/streams/phoenix-us.m3u8"
+  },
+  {
+    "name": "Moconomy",
+    "group": "EN | Business",
+    "tvgId": "MoconomyEconomyFinanceInfotainment.us",
+    "tvgName": "Moconomy",
+    "logo": "https://i.imgur.com/GvqbLZB.png",
+    "url": "https://amogonetworx-moconomy-2-us.tcl.wurl.tv/playlist.m3u8"
+  },
+  {
+    "name": "AccuWeather NOW",
+    "group": "EN | Wetter & Verkehr",
+    "tvgId": "AccuWeatherNOW.us",
+    "tvgName": "AccuWeather NOW",
+    "logo": "https://i.imgur.com/M8wbVYK.png",
+    "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg00684-accuweather-accuweather-plex/playlist.m3u8"
+  },
+  {
+    "name": "WeatherNation",
+    "group": "EN | Wetter & Verkehr",
+    "tvgId": "WeatherNation.us",
+    "tvgName": "WeatherNation",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/WeatherNation_Logo.svg/500px-WeatherNation_Logo.svg.png",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5d2cb7ac552e3773bc48982e/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2d1028-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=dcca8395-396e-4be0-9049-564f29c5ac9b"
+  },
+  {
+    "name": "DW Español",
+    "group": "ES | Noticias",
+    "tvgId": "DWEspanol.de",
+    "tvgName": "DW Español",
+    "logo": "https://i.imgur.com/A1xzjOI.png",
+    "url": "https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/stream04/streamPlaylist.m3u8"
+  },
+  {
+    "name": "CGTN Español",
+    "group": "ES | Noticias",
+    "tvgId": "CGTNSpanish.cn",
+    "tvgName": "CGTN Español",
+    "logo": "https://i.imgur.com/fMsJYzl.png",
+    "url": "https://news.cgtn.com/resource/live/espanol/cgtn-e.m3u8"
+  },
+  {
+    "name": "RTVE 24H",
+    "group": "ES | Noticias",
+    "tvgId": "rtve.es",
+    "tvgName": "RTVE 24H",
+    "logo": "https://i.imgur.com/WTDKOoM.png",
+    "url": "https://ztnr.rtve.es/ztnr/1694255.m3u8"
+  }
+]
