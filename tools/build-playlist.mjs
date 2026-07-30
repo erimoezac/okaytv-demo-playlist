@@ -442,7 +442,16 @@ const main = () => {
     });
 
     const output = `${lines.join('\n')}\n`;
+    // Written under two names on purpose. OkayIPTV stores every playlist
+    // response longer than 100 characters in the browser's CacheStorage under
+    // its URL, and reads it back on the next login without re-fetching. Load
+    // the list while GitHub Pages is mid-deploy and its 404 page (~9 KB) lands
+    // in that slot — from then on the app parses an HTML error page, finds
+    // zero channels and reports "Ungültiger Playlist-Inhalt" on every retry.
+    // A second, identical file gives a stuck client a URL that no cache has
+    // seen yet, without anyone having to clear browser storage.
     writeFileSync(new URL('../playlist.m3u', import.meta.url), output);
+    writeFileSync(new URL('../okaytv-demo.m3u', import.meta.url), output);
 
     const entries = lines.filter((l) => l.startsWith('#EXTINF')).length;
     console.error(`playlist.m3u: ${entries} entries, ${output.length} bytes, base=${BASE}`);

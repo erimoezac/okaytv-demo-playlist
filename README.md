@@ -7,11 +7,18 @@ offizielle, frei empfangbare Live-Streams.
 ## M3U-Link für Tester
 
 ```
-https://erimoezac.github.io/okaytv-demo-playlist/playlist.m3u
+https://erimoezac.github.io/okaytv-demo-playlist/okaytv-demo.m3u
 ```
 
 In der App unter *Anmelden → M3U-Link* einfügen. Kein Benutzername, kein
 Passwort.
+
+`playlist.m3u` liegt daneben und ist byte-identisch. Zwei Namen, weil die App
+jede Playlist-Antwort über 100 Zeichen unter ihrer URL in der CacheStorage
+ablegt und beim nächsten Login von dort liest: wer die Liste erwischt, während
+GitHub Pages gerade deployt, bekommt deren 404-Seite in diesen Slot und danach
+bei jedem Versuch „Ungültiger Playlist-Inhalt". Der zweite Name ist dann eine
+URL, die noch kein Cache gesehen hat.
 
 ## Was drin ist
 
