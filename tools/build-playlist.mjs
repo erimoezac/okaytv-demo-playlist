@@ -205,6 +205,16 @@ const UK_SUBGROUPS = [
     [/^Now /i, 'UK | Musik'],
 ];
 
+// The five source films under their real titles and years, in the order of
+// VIDEOS above, so each entry streams the film it names.
+const OPEN_MOVIES = [
+    { title: 'Big Buck Bunny', year: 2008 },
+    { title: 'Sintel', year: 2010 },
+    { title: 'Elephants Dream', year: 2006 },
+    { title: 'Tears of Steel', year: 2012 },
+    { title: 'Cosmos Laundromat', year: 2015 },
+];
+
 const EPG_FEEDS = [
     'DE1', 'AT1', 'CH1', 'UK1', 'US1', 'FR1', 'IT1', 'ES1', 'GR1', 'JP1', 'KR1', 'SA1',
 ].map((code) => `https://epgshare01.online/epgshare01/epg_ripper_${code}.xml.gz`);
@@ -339,6 +349,24 @@ const main = () => {
             }));
             push(movie.url);
         }
+    });
+
+    // The five films under their real names. Everything else in this playlist
+    // is invented, which means the app finds no metadata for it and the
+    // top-of-page preview stays empty — it needs at least a few titles it can
+    // match against a metadata provider. These five are the actual videos
+    // being streamed, so the match is honest: real poster, real synopsis, real
+    // cast, and the hero, the rating badges and "ähnliche Titel" have
+    // something to work with.
+    OPEN_MOVIES.forEach((movie, i) => {
+        const video = VIDEOS[i % VIDEOS.length];
+        push(extinf({
+            id: `om-${i + 1}`,
+            name: `${movie.title} (${movie.year})`,
+            logo: posterUrl(BRANDS[i % BRANDS.length], i),
+            group: 'DE | Open Movies (CC-BY)',
+        }));
+        push(movieStreamUrl(video, slugify(movie.title)));
     });
 
     // Format sampler — one row that walks the player paths on purpose.

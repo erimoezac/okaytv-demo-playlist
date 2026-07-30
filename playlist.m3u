@@ -1047,6 +1047,16 @@ https://erimoezac.github.io/okaytv-demo-playlist/vod/10001.mp4?nfsrc=/movie/nort
 https://erimoezac.github.io/okaytv-demo-playlist/vod/10002.mp4?nfsrc=/movie/midnight-circuit-schaltkreis-der-angst.mp4
 #EXTINF:-1 tvg-id="mv-0048-it-film" tvg-name="The Silent Atlas: Der Meridian (2017)" tvg-logo="https://erimoezac.github.io/okaytv-demo-playlist/covers/silent-atlas-10.jpg" group-title="IT | Film",The Silent Atlas: Der Meridian (2017)
 https://erimoezac.github.io/okaytv-demo-playlist/vod/10003.mp4?nfsrc=/movie/the-silent-atlas-der-meridian.mp4
+#EXTINF:-1 tvg-id="om-1" tvg-name="Big Buck Bunny (2008)" tvg-logo="https://erimoezac.github.io/okaytv-demo-playlist/covers/northbound-01.jpg" group-title="DE | Open Movies (CC-BY)",Big Buck Bunny (2008)
+https://erimoezac.github.io/okaytv-demo-playlist/vod/10001.mp4?nfsrc=/movie/big-buck-bunny.mp4
+#EXTINF:-1 tvg-id="om-2" tvg-name="Sintel (2010)" tvg-logo="https://erimoezac.github.io/okaytv-demo-playlist/covers/midnight-circuit-02.jpg" group-title="DE | Open Movies (CC-BY)",Sintel (2010)
+https://erimoezac.github.io/okaytv-demo-playlist/vod/10002.mp4?nfsrc=/movie/sintel.mp4
+#EXTINF:-1 tvg-id="om-3" tvg-name="Elephants Dream (2006)" tvg-logo="https://erimoezac.github.io/okaytv-demo-playlist/covers/silent-atlas-03.jpg" group-title="DE | Open Movies (CC-BY)",Elephants Dream (2006)
+https://erimoezac.github.io/okaytv-demo-playlist/vod/10003.mp4?nfsrc=/movie/elephants-dream.mp4
+#EXTINF:-1 tvg-id="om-4" tvg-name="Tears of Steel (2012)" tvg-logo="https://erimoezac.github.io/okaytv-demo-playlist/covers/ashes-of-tomorrow-04.jpg" group-title="DE | Open Movies (CC-BY)",Tears of Steel (2012)
+https://erimoezac.github.io/okaytv-demo-playlist/vod/10004.mp4?nfsrc=/movie/tears-of-steel.mp4
+#EXTINF:-1 tvg-id="om-5" tvg-name="Cosmos Laundromat (2015)" tvg-logo="https://erimoezac.github.io/okaytv-demo-playlist/covers/neon-harbor-05.jpg" group-title="DE | Open Movies (CC-BY)",Cosmos Laundromat (2015)
+https://erimoezac.github.io/okaytv-demo-playlist/vod/10005.mp4?nfsrc=/movie/cosmos-laundromat.mp4
 #EXTINF:-1 tvg-id="fmt-1" tvg-name="Testbild HLS · Multi-Bitrate (ABR)" tvg-logo="https://erimoezac.github.io/okaytv-demo-playlist/covers/midnight-circuit-01.jpg" group-title="DE | VOD Test-Streams",Testbild HLS · Multi-Bitrate (ABR)
 https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8?nfsrc=/movie/format-test-1.mp4
 #EXTINF:-1 tvg-id="fmt-2" tvg-name="Testbild MP4 · H.264 480p" tvg-logo="https://erimoezac.github.io/okaytv-demo-playlist/covers/northbound-02.jpg" group-title="DE | VOD Test-Streams",Testbild MP4 · H.264 480p
