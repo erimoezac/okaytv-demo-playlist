@@ -18,9 +18,19 @@ Passwort.
 | Bereich | Umfang |
 | --- | --- |
 | Live-TV | 92 Sender in 24 Kategorien (ARD/ZDF komplett, Regionalsender, Nachrichten, Musik, Shopping, International) |
-| Filme | 80 Titel, verteilt auf 19 Genre-Kategorien + eine Kategorie mit Test-Formaten |
-| Serien | 34 Serien mit 1–3 Staffeln und insgesamt über 400 Folgen |
+| Filme | 85 Titel, 443 Kacheln in 21 Kategorien (19 Genres + Test-Formate + Open Movies) |
+| Serien | 34 Serien mit 1–3 Staffeln und 513 Folgen in 8 Kategorien |
 | EPG | XMLTV-Quellen für DE, AT, CH, UK, US, FR, IT, ES, GR, JP, KR, SA |
+
+1056 Einträge insgesamt. Jede Filmzeile zeigt alle fünf Cover im Wechsel, jede
+Serienzeile ebenso — innerhalb einer Kategorie bekommt jeder Eintrag eine
+eigene Cover-URL, weil der Parser sonst alles wegwirft, was sich ein Poster
+teilt.
+
+Absichtlich abgedeckte Sonderfälle: Serien in zwei Kategorien (werden zu einer
+Kachel zusammengeführt), deutsche Staffel-/Folgen-Schreibweise, komplette
+Staffeln als einzelner Eintrag, Sprach-Präfixe für den Sprachfilter, und eine
+Kategorie mit MKV-, WebM- und HEVC-Streams für die Player-Pfade.
 
 Die Kategorien sind mit Sprach-Präfixen (`DE |`, `EN |`, `TR |`, …) benannt,
 damit der Sprachfilter und die EPG-Länderzuordnung der App etwas zu tun haben.
