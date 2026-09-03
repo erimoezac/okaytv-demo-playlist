@@ -18,13 +18,18 @@
 //   2. Inside one category the parser drops a film whose poster URL was
 //      already claimed by another film (that is how it kills provider
 //      duplicates). Reusing one cover for twenty films would therefore leave
-//      one visible tile. Hence covers/<brand>-NN.jpg: the same five images,
-//      copied to sixteen paths each, so every film in a category carries its
-//      own poster URL.
+//      one visible tile. Hence covers/<brand>-NN.jpg: every brand image is
+//      copied to sixteen paths, so every film in a category carries its own
+//      poster URL.
 //
 // Usage: node tools/build-playlist.mjs [--base=https://host/path]
 
 import { readFileSync, writeFileSync } from 'node:fs';
+
+// Marken, Titel und Artwork liegen in einer eigenen Datei, damit
+// tools/check-title-collisions.mjs sie pruefen kann, ohne diesen Generator zu
+// starten (und damit die Playlist zu ueberschreiben).
+import { BRANDS, BRAND_ARTWORK, MOVIE_TITLES, SERIES_TITLES } from './titles.mjs';
 
 const DEFAULT_BASE = 'https://erimoezac.github.io/okaytv-demo-playlist';
 const baseArg = process.argv.find((a) => a.startsWith('--base='));
@@ -65,106 +70,6 @@ const FORMAT_STREAMS = [
     { title: 'Testbild MP4 · Langer Film 15 Minuten', url: `${BASE}/vod/10002.mp4`, brand: 'midnight-circuit' },
 ];
 
-// ---------------------------------------------------------------------------
-// The five covers, and the title family that belongs to each of them. The
-// titles have to stay inside their family: the brand name is printed on the
-// artwork, so "Ashes of Tomorrow" under the Neon Harbor poster would read as a
-// broken list rather than a demo one.
-// ---------------------------------------------------------------------------
-const BRANDS = ['northbound', 'midnight-circuit', 'silent-atlas', 'ashes-of-tomorrow', 'neon-harbor'];
-
-// Titelbild, freigestelltes Titel-Logo und Kurzbeschreibung je Marke. Die App
-// liest sie über tvg-backdrop / tvg-titlelogo / tvg-plot und baut daraus den
-// Hero auf der Startseite — ohne dass sie einen Metadaten-Treffer braucht.
-// Ein Titel-Logo gibt es nur für zwei der fünf Marken; für die übrigen rendert
-// der Hero den Titel als Text, was genauso vorgesehen ist.
-const BRAND_ARTWORK = {
-    northbound: {
-        logo: 'northbound',
-        plot: 'Ein Fahrer bringt einen Konvoi über die letzte offene Passstraße nach Norden, bevor der Winter sie für Monate schließt. Als der Funk abreißt, wird aus der Route eine Frage von Vertrauen — und aus dem Wetter der kleinste seiner Gegner.',
-    },
-    'midnight-circuit': {
-        logo: 'midnight-circuit',
-        plot: 'In einer Stadt, die jede Bewegung protokolliert, sucht ein Ermittler nach einer Nacht, die aus allen Aufzeichnungen verschwunden ist. Je näher er kommt, desto klarer wird: Das System vergisst nichts — es wurde gebeten, sich zu erinnern.',
-    },
-    'silent-atlas': {
-        logo: null,
-        plot: 'Eine alte Seekarte führt an eine Küste, die auf keiner heutigen Karte steht. Was als Expedition beginnt, wird zur Suche nach den Leuten, die dort einmal gelebt haben — und nach dem Grund, warum niemand ihre Spuren aufschreiben wollte.',
-    },
-    'ashes-of-tomorrow': {
-        logo: null,
-        plot: 'Jahre nach dem Ende sammelt eine Überlebende ein, was von den Städten übrig ist: Werkzeuge, Namen, Erinnerungen. Als aus dem Süden ein Funkspruch kommt, muss sie entscheiden, ob die Zukunft ein Ort ist, zu dem man zurückgeht.',
-    },
-    'neon-harbor': {
-        logo: null,
-        plot: 'Zwei Ermittler, ein Hafen, eine Leiche zwischen den Containern. Ihre Fälle laufen auf dieselbe Reederei zu — und auf eine Nachtschicht, in der beide entscheiden müssen, wem im Revier sie noch trauen.',
-    },
-};
-
-const MOVIE_TITLES = {
-    'midnight-circuit': [
-        ['Midnight Circuit', 2019], ['Midnight Circuit II – Overdrive', 2021],
-        ['Midnight Circuit III – Blackout', 2023], ['Midnight Circuit: Zero Day', 2024],
-        ['Midnight Circuit: Neon Nights', 2025], ['Midnight Circuit – Der letzte Code', 2026],
-        ['Midnight Circuit: Ghost Protocol', 2022], ['Midnight Circuit – Systemfehler', 2020],
-        ['Midnight Circuit: Deep Freeze', 2018], ['Midnight Circuit – Schaltkreis der Angst', 2017],
-        ['Midnight Circuit: Downtown', 2016], ['Midnight Circuit – Rebooted', 2026],
-        ['Midnight Circuit: Static', 2023], ['Midnight Circuit – Die Quelle', 2021],
-        ['Midnight Circuit: Firewall', 2019], ['Midnight Circuit – Endstation Neon', 2025],
-    ],
-    'silent-atlas': [
-        ['The Silent Atlas', 2020], ['The Silent Atlas: Die verlorene Küste', 2022],
-        ['The Silent Atlas II – Nordpassage', 2023], ['The Silent Atlas: Kompass des Nordens', 2024],
-        ['The Silent Atlas – Das Kartenzimmer', 2025], ['The Silent Atlas: Tiefsee', 2021],
-        ['The Silent Atlas – Letzte Expedition', 2026], ['The Silent Atlas: Inselgrab', 2019],
-        ['The Silent Atlas – Sturmkap', 2018], ['The Silent Atlas: Der Meridian', 2017],
-        ['The Silent Atlas – Bernsteinroute', 2016], ['The Silent Atlas: Salzstraße', 2026],
-        ['The Silent Atlas – Höhle der Ahnen', 2022], ['The Silent Atlas: Südwind', 2023],
-        ['The Silent Atlas – Schwarzes Wasser', 2024], ['The Silent Atlas: Nachtfahrt', 2025],
-    ],
-    'ashes-of-tomorrow': [
-        ['Ashes of Tomorrow', 2021], ['Ashes of Tomorrow: Rebirth', 2023],
-        ['Ashes of Tomorrow II – Aschewinter', 2024], ['Ashes of Tomorrow: Die letzte Stadt', 2025],
-        ['Ashes of Tomorrow – Funkstille', 2026], ['Ashes of Tomorrow: Staubjahre', 2022],
-        ['Ashes of Tomorrow – Sirenen', 2020], ['Ashes of Tomorrow: Bunker Neun', 2019],
-        ['Ashes of Tomorrow – Die Rückkehr', 2018], ['Ashes of Tomorrow: Glutkern', 2017],
-        ['Ashes of Tomorrow – Nordlicht', 2016], ['Ashes of Tomorrow: Wasserzeichen', 2026],
-        ['Ashes of Tomorrow – Letzte Ernte', 2023], ['Ashes of Tomorrow: Schattenmarsch', 2024],
-        ['Ashes of Tomorrow – Feuerlinie', 2025], ['Ashes of Tomorrow: Morgengrauen', 2022],
-    ],
-    northbound: [
-        ['Northbound', 2022], ['Northbound: Whiteout', 2024],
-        ['Northbound II – Eiszeit', 2025], ['Northbound: Der letzte Konvoi', 2026],
-        ['Northbound – Packeis', 2023], ['Northbound: Polarnacht', 2021],
-        ['Northbound – Schneetreiben', 2020], ['Northbound: Kalte Spur', 2019],
-        ['Northbound – Grenzland', 2018], ['Northbound: Nordwind', 2017],
-        ['Northbound – Der Pass', 2016], ['Northbound: Frostbeulen', 2026],
-        ['Northbound – Weißes Rauschen', 2024], ['Northbound: Treibgut', 2022],
-        ['Northbound – Lawinengefahr', 2025], ['Northbound: Rentierpfad', 2023],
-    ],
-    'neon-harbor': [
-        ['Neon Harbor', 2023], ['Neon Harbor: Hafenlichter', 2024],
-        ['Neon Harbor II – Tiefgang', 2025], ['Neon Harbor: Kaikante', 2026],
-        ['Neon Harbor – Nachtschicht', 2022], ['Neon Harbor: Containerbucht', 2021],
-        ['Neon Harbor – Salzwasser', 2020], ['Neon Harbor: Hochwasser', 2019],
-        ['Neon Harbor – Werftviertel', 2018], ['Neon Harbor: Regenbogenpier', 2017],
-        ['Neon Harbor – Molenkopf', 2016], ['Neon Harbor: Fährmann', 2026],
-        ['Neon Harbor – Dockstraße', 2024], ['Neon Harbor: Leuchtfeuer', 2022],
-        ['Neon Harbor – Schleusenwärter', 2025], ['Neon Harbor: Tidenhub', 2023],
-    ],
-};
-
-// Series titles per cover. Deliberately free of the words the parser reads as
-// season/episode markers (Season, Staffel, Sezon, Folge, Bölüm, …) — one of
-// those inside a show's name would truncate the name at that word.
-const SERIES_TITLES = {
-    northbound: ['Northbound', 'Northbound: Origins', 'Northbound – Die Küstenwache', 'Northbound: Cold Trail', 'Northbound – Grenzposten', 'Northbound: Weiße Wildnis', 'Northbound: Fährtenleser'],
-    'midnight-circuit': ['Midnight Circuit', 'Midnight Circuit: Protokoll', 'Midnight Circuit – Datenspur', 'Midnight Circuit: Nachtschaltung', 'Midnight Circuit – Sektor Null', 'Midnight Circuit: Rauschen', 'Midnight Circuit – Kaltstart'],
-    'silent-atlas': ['The Silent Atlas', 'The Silent Atlas: Expeditionen', 'The Silent Atlas – Kartenwerk', 'The Silent Atlas: Untiefen', 'The Silent Atlas – Randnotizen', 'The Silent Atlas: Windrose', 'The Silent Atlas: Passatwinde'],
-    'ashes-of-tomorrow': ['Ashes of Tomorrow', 'Ashes of Tomorrow: Aftermath', 'Ashes of Tomorrow – Flugasche', 'Ashes of Tomorrow: Notruf', 'Ashes of Tomorrow – Trümmerpfad', 'Ashes of Tomorrow: Neuland', 'Ashes of Tomorrow – Wüstenlauf'],
-    'neon-harbor': ['Neon Harbor', 'Neon Harbor: Reviermeldung', 'Neon Harbor – Kaischuppen', 'Neon Harbor: Nachtstreife', 'Neon Harbor – Hafenkrimi', 'Neon Harbor: Flutlicht', 'Neon Harbor: Hafenmeister'],
-};
-
 // Episode subtitles, cycled so every episode line carries a name the way a
 // real provider list does.
 const EPISODE_NAMES = [
@@ -176,7 +81,7 @@ const EPISODE_NAMES = [
 
 // ---------------------------------------------------------------------------
 // Catalogue layout. `size` is how many films the row carries; the covers cycle
-// through all five brands in order, so every row shows all five.
+// through every brand in order, so a row of 30 shows all fifteen twice.
 // ---------------------------------------------------------------------------
 const MOVIE_CATEGORIES = [
     { name: 'DE | Neu im Katalog 2026', size: 30, offset: 0 },
@@ -201,8 +106,9 @@ const MOVIE_CATEGORIES = [
 ];
 
 // Which shows go into which row, and how many seasons/episodes each carries.
-// Consecutive indices step through the five covers in turn, so every row shows
-// all five. Each show has exactly one home row — a show listed twice is merged
+// Consecutive indices step through the covers in turn, so a row never repeats a
+// brand before it has used all of them. Each show has exactly one home row — a
+// show listed twice is merged
 // by the parser into a single tile in whichever row carries more episodes, and
 // disappears from the other one. Show 0 is listed twice on purpose, as a live
 // check that the cross-category merge still works.
@@ -264,7 +170,7 @@ const movieStreamUrl = (video, slug) => `${video.url}?nfsrc=/movie/${slug}.mp4`;
 const episodeStreamUrl = (video, showSlug, season, episode) =>
     `${video.url}?nfsrc=/series/${showSlug}/s${String(season).padStart(2, '0')}e${String(episode).padStart(2, '0')}.mp4`;
 
-// Flat pool of 80 films: sixteen per cover, each with its own poster path.
+// Flat pool of sixteen films per cover, each with its own poster path.
 const buildMoviePool = () => {
     const pool = [];
     for (let i = 0; i < 16; i++) {
@@ -293,7 +199,7 @@ const buildMoviePool = () => {
     return pool;
 };
 
-// Flat pool of 30 shows, six per cover.
+// Flat pool of shows, seven per cover.
 const buildSeriesPool = () => {
     const pool = [];
     for (let i = 0; i < 7; i++) {
@@ -383,7 +289,7 @@ const main = () => {
             // offset shifts each row into a different slice of the pool, so the
             // rows overlap the way a real catalogue does (a film sits in
             // "New" and in its genre row) without any two rows being equal.
-            const movie = movies[(category.offset * 5 + i) % movies.length];
+            const movie = movies[(category.offset * BRANDS.length + i) % movies.length];
             push(extinf({
                 id: `${movie.id}-${slugify(category.name)}`,
                 name: movie.title,
