@@ -27,7 +27,8 @@ export const BRANDS = [
 // Titelbild, freigestelltes Titel-Logo und Kurzbeschreibung je Marke. Die App
 // liest sie über tvg-backdrop / tvg-titlelogo / tvg-plot und baut daraus den
 // Hero auf der Startseite — ohne dass sie einen Metadaten-Treffer braucht.
-// Drei der fünf ältesten Marken haben kein Titel-Logo; für die rendert der Hero
+// Alle fünfzehn haben inzwischen einen Schriftzug; für die drei ältesten wurde er
+// aus dem Cover freigestellt, auf dem er ohnehin steht. Fehlte einer, rendert der Hero
 // den Titel als Text, was genauso vorgesehen ist.
 export const BRAND_ARTWORK = {
     northbound: {
@@ -39,15 +40,15 @@ export const BRAND_ARTWORK = {
         plot: 'In einer Stadt, die jede Bewegung protokolliert, sucht ein Ermittler nach einer Nacht, die aus allen Aufzeichnungen verschwunden ist. Je näher er kommt, desto klarer wird: Das System vergisst nichts — es wurde gebeten, sich zu erinnern.',
     },
     'silent-atlas': {
-        logo: null,
+        logo: 'silent-atlas',
         plot: 'Eine alte Seekarte führt an eine Küste, die auf keiner heutigen Karte steht. Was als Expedition beginnt, wird zur Suche nach den Leuten, die dort einmal gelebt haben — und nach dem Grund, warum niemand ihre Spuren aufschreiben wollte.',
     },
     'ashes-of-tomorrow': {
-        logo: null,
+        logo: 'ashes-of-tomorrow',
         plot: 'Jahre nach dem Ende sammelt eine Überlebende ein, was von den Städten übrig ist: Werkzeuge, Namen, Erinnerungen. Als aus dem Süden ein Funkspruch kommt, muss sie entscheiden, ob die Zukunft ein Ort ist, zu dem man zurückgeht.',
     },
     'neon-harbor': {
-        logo: null,
+        logo: 'neon-harbor',
         plot: 'Zwei Ermittler, ein Hafen, eine Leiche zwischen den Containern. Ihre Fälle laufen auf dieselbe Reederei zu — und auf eine Nachtschicht, in der beide entscheiden müssen, wem im Revier sie noch trauen.',
     },
     'after-the-fall': {
@@ -265,3 +266,59 @@ export const SERIES_TITLES = {
     'realms-awakened': ['Realms Awakened', 'Realms Awakened: Botengänge', 'Realms Awakened – Talschaften', 'Realms Awakened: Wappenrollen', 'Realms Awakened – Turmwachen', 'Realms Awakened: Grenzmarken', 'Realms Awakened: Kronrat'],
     'shattered-lies': ['Shattered Lies', 'Shattered Lies: Verhandlungstage', 'Shattered Lies – Aktenlagen', 'Shattered Lies: Zeugenstände', 'Shattered Lies – Schriftsätze', 'Shattered Lies: Familienjahre', 'Shattered Lies: Beweisstücke'],
 };
+
+// ---------------------------------------------------------------------------
+// Die Werte der Infozeile im Detail: Genres, Altersfreigabe, Bewertung,
+// Laufzeit, Besetzung, Regie.
+//
+// Ein Xtream-Anbieter liefert sie über get_vod_info. Eine reine M3U-Liste hatte
+// dafür keinen Weg, und weil diese Playlist bewusst gar keinen Metadaten-
+// Anbieter mehr befragt (siehe check-title-collisions.mjs), blieb die Zeile
+// unter jedem Film leer. Seit der App-Änderung vom 03.09.2026 liest der Parser
+// tvg-genre / tvg-age / tvg-rating / tvg-runtime / tvg-cast / tvg-director.
+//
+// Je Marke steht hier, was zum Cover passt — Altersfreigabe und Genre kommen
+// vom Genre, nicht vom Zufall: "Zum Gruseln" mit FSK 0 wäre sofort als Attrappe
+// erkennbar. Bewertung und Laufzeit variieren dagegen pro TITEL, damit die
+// Reihen nicht wie eine Tapete aus identischen Zahlen aussehen; sie werden im
+// Generator deterministisch aus dem Titel abgeleitet, also bei jedem Bau gleich.
+// ---------------------------------------------------------------------------
+export const BRAND_FACTS = {
+    northbound:          { genres: ['Abenteuer', 'Thriller'],        age: '12', minuten: [96, 128], wertung: [6.4, 7.9] },
+    'midnight-circuit':  { genres: ['Science Fiction', 'Thriller'],  age: '16', minuten: [104, 141], wertung: [6.8, 8.4] },
+    'silent-atlas':      { genres: ['Abenteuer', 'Dokumentation'],   age: '6',  minuten: [88, 119], wertung: [6.9, 8.2] },
+    'ashes-of-tomorrow': { genres: ['Science Fiction', 'Drama'],     age: '16', minuten: [101, 137], wertung: [6.2, 7.8] },
+    'neon-harbor':       { genres: ['Krimi', 'Thriller'],            age: '16', minuten: [94, 126], wertung: [6.5, 8.0] },
+    'after-the-fall':    { genres: ['Science Fiction', 'Drama'],     age: '12', minuten: [98, 133], wertung: [6.6, 8.1] },
+    'beyond-horizons':   { genres: ['Abenteuer', 'Drama'],           age: '6',  minuten: [92, 121], wertung: [6.7, 8.3] },
+    'crimson-files':     { genres: ['Krimi', 'Mystery'],             age: '16', minuten: [99, 134], wertung: [6.5, 8.2] },
+    'eclipse-protocol':  { genres: ['Science Fiction', 'Mystery'],   age: '12', minuten: [106, 144], wertung: [6.3, 8.0] },
+    'iron-dawn':         { genres: ['Kriegsfilm', 'Drama'],          age: '16', minuten: [108, 152], wertung: [6.6, 8.4] },
+    'neon-district':     { genres: ['Science Fiction', 'Krimi'],     age: '16', minuten: [97, 129], wertung: [6.4, 7.9] },
+    'northland-saga':    { genres: ['Historienfilm', 'Abenteuer'],   age: '16', minuten: [112, 158], wertung: [6.8, 8.5] },
+    'only-forever':      { genres: ['Liebesfilm', 'Drama'],          age: '6',  minuten: [89, 118], wertung: [6.1, 7.7] },
+    'realms-awakened':   { genres: ['Fantasy', 'Abenteuer'],         age: '12', minuten: [115, 161], wertung: [6.9, 8.6] },
+    'shattered-lies':    { genres: ['Thriller', 'Drama'],            age: '16', minuten: [95, 127], wertung: [6.3, 8.1] },
+};
+
+// Erfundene Namen für Besetzung und Regie.
+//
+// Bewusst KEINE echten Schauspieler: die App schlägt sonst nicht gefundene
+// Namen bei TMDB nach und hängt einem erfundenen Film ein echtes Porträt an.
+// Für diese Liste ist der Weg zusätzlich abgeschaltet (die App fragt für einen
+// Eintrag mit eigenem Artwork gar keinen Anbieter mehr), aber die Namen sollen
+// auch dann harmlos sein, wenn jemand die Liste in einem anderen Player öffnet.
+export const CAST_POOL = [
+    'Marek Halvorsen', 'Ines Brandtner', 'Tomas Ekvall', 'Rieke Sandmann',
+    'Jonan Petrescu', 'Liv Aarhusen', 'Cassian Merle', 'Nora Vestergaard',
+    'Emil Ravnborg', 'Sanna Lindqvist', 'Arno Delacroix', 'Mira Toivonen',
+    'Bastian Kohl', 'Selma Rutkowski', 'Ivar Bengtsson', 'Juno Marchetti',
+    'Aleks Norrback', 'Thea Lindgren', 'Roman Kesselring', 'Vera Ahlgren',
+    'Nikolas Ferrand', 'Hedda Wulfson', 'Milan Voskuil', 'Freya Ostberg',
+];
+
+export const DIRECTOR_POOL = [
+    'Anouk Verhagen', 'Stellan Broch', 'Mira Kaltenbach', 'Yannick Roussel',
+    'Ida Sonnleitner', 'Halvard Nyström', 'Céline Marchand', 'Piet Vandersteen',
+    'Rasmus Ehlert', 'Nadja Wolanski', 'Emile Bouchard', 'Katrin Sjöberg',
+];

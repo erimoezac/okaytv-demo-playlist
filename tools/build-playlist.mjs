@@ -29,7 +29,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 // Marken, Titel und Artwork liegen in einer eigenen Datei, damit
 // tools/check-title-collisions.mjs sie pruefen kann, ohne diesen Generator zu
 // starten (und damit die Playlist zu ueberschreiben).
-import { BRANDS, BRAND_ARTWORK, MOVIE_TITLES, SERIES_TITLES } from './titles.mjs';
+import { BRANDS, BRAND_ARTWORK, BRAND_FACTS, CAST_POOL, DIRECTOR_POOL, MOVIE_TITLES, SERIES_TITLES } from './titles.mjs';
 
 const DEFAULT_BASE = 'https://erimoezac.github.io/okaytv-demo-playlist';
 const baseArg = process.argv.find((a) => a.startsWith('--base='));
@@ -163,6 +163,58 @@ const slugify = (value) => value
 
 const posterUrl = (brand, index) => `${BASE}/covers/${brand}-${String((index % 16) + 1).padStart(2, '0')}.jpg`;
 
+// ---------------------------------------------------------------------------
+// Bewertung, Laufzeit und Besetzung je Titel.
+//
+// Deterministisch aus dem Titel abgeleitet statt gewürfelt: derselbe Titel
+// bekommt bei jedem Bau dieselben Werte. Sonst wäre jeder Lauf ein kompletter
+// Diff über 1056 Zeilen, und ein Tester, der zwei Stände vergleicht, könnte
+// echte Änderungen nicht mehr von Rauschen unterscheiden.
+// ---------------------------------------------------------------------------
+const titelHash = (value) => {
+    let hash = 2166136261;
+    const text = String(value || '');
+    for (let i = 0; i < text.length; i++) {
+        hash ^= text.charCodeAt(i);
+        hash = Math.imul(hash, 16777619) >>> 0;
+    }
+    return hash;
+};
+
+// Zwei Werte aus EINEM Hash brauchen unterschiedliche Bits — sonst laufen
+// Bewertung und Laufzeit im Gleichschritt und jeder lange Film wäre auch der
+// bestbewertete.
+const streuung = (hash, schicht, spanne) => {
+    const [von, bis] = spanne;
+    const anteil = ((hash >>> (schicht * 7)) & 0xffff) / 0xffff;
+    return von + anteil * (bis - von);
+};
+
+// Folgenlänge statt Spielfilmlänge. Ohne das stand unter jeder Episode die
+// Laufzeit eines Kinofilms ("Iron Dawn S01 E01 · 123 min") — der eine Wert, an
+// dem sofort auffällt, dass die Zahlen nicht zum Inhalt gehören.
+const SERIEN_MINUTEN = [38, 58];
+
+const faktenFuer = (brand, titel, { istFolge = false } = {}) => {
+    const basis = BRAND_FACTS[brand];
+    if (!basis) return null;
+    const hash = titelHash(titel);
+    const wertung = streuung(hash, 0, basis.wertung).toFixed(1);
+    const minuten = Math.round(streuung(hash, 2, istFolge ? SERIEN_MINUTEN : basis.minuten));
+    // Zwei Namen aus dem Pool, garantiert verschieden.
+    const ersterName = hash % CAST_POOL.length;
+    const zweiterName = (ersterName + 1 + ((hash >>> 8) % (CAST_POOL.length - 1))) % CAST_POOL.length;
+    const dritterName = (zweiterName + 1 + ((hash >>> 16) % (CAST_POOL.length - 1))) % CAST_POOL.length;
+    return {
+        genres: basis.genres,
+        age: basis.age,
+        wertung,
+        minuten,
+        cast: [CAST_POOL[ersterName], CAST_POOL[zweiterName], CAST_POOL[dritterName]],
+        director: DIRECTOR_POOL[(hash >>> 4) % DIRECTOR_POOL.length],
+    };
+};
+
 // The classifier marker described at the top of this file. It also makes every
 // entry's URL unique, which keeps the parser's URL-level de-duplication from
 // collapsing films that share the same demo video.
@@ -219,8 +271,13 @@ const buildSeriesPool = () => {
 const lines = [];
 const push = (line) => lines.push(line);
 
-const extinf = ({ duration = -1, id, name, logo, group, tvgName, brand = null }) => {
+// `faktenTitel` steuert, aus welchem Titel Bewertung und Laufzeit abgeleitet
+// werden. Bei Serien ist das der SHOW-Titel, nicht der Folgen-Titel: sonst
+// bekäme jede Folge derselben Staffel eine andere Bewertung und eine andere
+// Laufzeit, und die Serie sähe im Detail aus wie zwanzig fremde Filme.
+const extinf = ({ duration = -1, id, name, logo, group, tvgName, brand = null, faktenTitel = null, istFolge = false }) => {
     const artwork = brand ? BRAND_ARTWORK[brand] : null;
+    const fakten = brand ? faktenFuer(brand, faktenTitel || name, { istFolge }) : null;
     const attrs = [
         `tvg-id="${id}"`,
         `tvg-name="${tvgName || name}"`,
@@ -231,6 +288,16 @@ const extinf = ({ duration = -1, id, name, logo, group, tvgName, brand = null })
         ...(artwork ? [`tvg-backdrop="${BASE}/hero/${brand}.jpg"`] : []),
         ...(artwork?.logo ? [`tvg-titlelogo="${BASE}/logos/${artwork.logo}.png"`] : []),
         ...(artwork?.plot ? [`tvg-plot="${artwork.plot}"`] : []),
+        // Die Werte der Infozeile im Detail. Ohne sie steht dort nichts, weil
+        // diese Playlist bewusst keinen Metadaten-Anbieter mehr befragt.
+        ...(fakten ? [
+            `tvg-genre="${fakten.genres.join(', ')}"`,
+            `tvg-age="${fakten.age}"`,
+            `tvg-rating="${fakten.wertung}"`,
+            `tvg-runtime="${fakten.minuten}"`,
+            `tvg-cast="${fakten.cast.join(', ')}"`,
+            `tvg-director="${fakten.director}"`,
+        ] : []),
         `group-title="${group}"`,
     ].join(' ');
     return `#EXTINF:${duration} ${attrs},${name}`;
@@ -347,6 +414,8 @@ const main = () => {
                         logo: posterUrl(show.brand, show.posterIndex),
                         group: category.name,
                         brand: show.brand,
+                        faktenTitel: show.title,
+                        istFolge: true,
                     }));
                     push(episodeStreamUrl(video, show.slug, season, episode));
                 }
@@ -365,6 +434,8 @@ const main = () => {
             logo: posterUrl(germanShow.brand, germanShow.posterIndex),
             group: 'DE | Serien mit Staffel-Schreibweise',
             brand: germanShow.brand,
+            faktenTitel: germanShow.title,
+            istFolge: true,
         }));
         push(episodeStreamUrl(VIDEOS[episode % VIDEOS.length], `${germanShow.slug}-de`, 1, episode));
     }
@@ -381,6 +452,7 @@ const main = () => {
                 logo: posterUrl(show.brand, show.posterIndex),
                 group: 'DE | Serien Boxsets',
                 brand: show.brand,
+                faktenTitel: show.title,
             }));
             push(`${VIDEOS[season % VIDEOS.length].url}?nfsrc=/series/${show.slug}-box/s0${season}.mp4`);
         });
