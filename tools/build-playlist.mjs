@@ -83,16 +83,23 @@ const EPISODE_NAMES = [
 // Catalogue layout. `size` is how many films the row carries; the covers cycle
 // through every brand in order, so a row of 30 shows all fifteen twice.
 // ---------------------------------------------------------------------------
+// `brands` bindet eine Reihe an bestimmte Marken. Seit es Marken mit klarem
+// Genre gibt (Horror, Animation, Mystery, Superhelden), wäre der reine
+// Rundlauf ein sichtbarer Fehler: in „DE | Horror" stünden Kinderfilme.
+//
+// Das betrifft nur den Anbieter-Modus („Reihenfolge meines Anbieters"). Im
+// Standard ordnet die App selbst ein, und zwar über tvg-genre — dafür musste
+// sie erst lernen, dass eine Playlist ihr Genre mitbringen kann.
 const MOVIE_CATEGORIES = [
     { name: 'DE | Neu im Katalog 2026', size: 30, offset: 0 },
-    { name: 'DE | Action & Abenteuer', size: 30, offset: 3 },
-    { name: 'DE | Thriller & Krimi', size: 28, offset: 6 },
-    { name: 'DE | Sci-Fi & Fantasy', size: 26, offset: 9 },
+    { name: 'DE | Action & Abenteuer', size: 30, offset: 3, brands: ['aurora-sentinel', 'nova-strike', 'shadow-vigil', 'northbound', 'iron-dawn', 'northland-saga'] },
+    { name: 'DE | Thriller & Krimi', size: 28, offset: 6, brands: ['crimson-files', 'midnight-clue', 'fogline', 'neon-harbor', 'shattered-lies', 'the-hollow-key'] },
+    { name: 'DE | Sci-Fi & Fantasy', size: 26, offset: 9, brands: ['eclipse-protocol', 'midnight-circuit', 'neon-district', 'after-the-fall', 'realms-awakened', 'ashes-of-tomorrow'] },
     { name: 'DE | Drama', size: 24, offset: 12 },
     { name: 'DE | Komödie', size: 22, offset: 15 },
-    { name: 'DE | Horror', size: 20, offset: 18 },
+    { name: 'DE | Horror', size: 20, offset: 18, brands: ['black-hollow', 'last-light-manor', 'the-weeping-pines'] },
     { name: 'DE | Doku & Reportage', size: 18, offset: 21 },
-    { name: 'DE | Kinder & Familie', size: 20, offset: 24 },
+    { name: 'DE | Kinder & Familie', size: 20, offset: 24, brands: ['cosmo-crew', 'skygarden-voyage', 'night-critters', 'skypals', 'robo-und-nico', 'lanternwood'] },
     { name: 'DE | 4K UHD Filme', size: 20, offset: 27 },
     { name: 'DE | Klassiker', size: 18, offset: 30 },
     { name: 'DE | Filmreihen & Boxsets', size: 24, offset: 33 },
@@ -115,8 +122,8 @@ const MOVIE_CATEGORIES = [
 const SERIES_CATEGORIES = [
     { name: 'DE | Serien Neu 2026', shows: [0, 1, 2, 3, 4, 5, 6, 7], seasons: 2, episodes: 8 },
     { name: 'DE | Serien Drama', shows: [8, 9, 10, 11, 12, 13], seasons: 3, episodes: 6 },
-    { name: 'DE | Serien Crime', shows: [14, 15, 16, 17, 18, 19], seasons: 2, episodes: 10 },
-    { name: 'DE | Anime & Animation', shows: [20, 21, 22, 23], seasons: 2, episodes: 6 },
+    { name: 'DE | Serien Crime', shows: [14, 15, 16, 17, 18, 19], seasons: 2, episodes: 10, brands: ['crimson-files', 'midnight-clue', 'fogline', 'neon-harbor', 'shadow-vigil', 'the-hollow-key'] },
+    { name: 'DE | Anime & Animation', shows: [20, 21, 22, 23], seasons: 2, episodes: 6, brands: ['cosmo-crew', 'lanternwood', 'night-critters', 'skypals'] },
     { name: 'EN | Series', shows: [24, 25, 26, 27], seasons: 2, episodes: 8 },
     { name: 'TR | Diziler', shows: [28, 29, 0], seasons: 1, episodes: 12 },
 ];
@@ -356,7 +363,12 @@ const main = () => {
             // offset shifts each row into a different slice of the pool, so the
             // rows overlap the way a real catalogue does (a film sits in
             // "New" and in its genre row) without any two rows being equal.
-            const movie = movies[(category.offset * BRANDS.length + i) % movies.length];
+            // An Marken gebundene Reihe: nur deren Filme, sonst der Rundlauf
+            // ueber den ganzen Pool wie bisher.
+            const auswahl = category.brands
+                ? movies.filter((m) => category.brands.includes(m.brand))
+                : movies;
+            const movie = auswahl[(category.offset * BRANDS.length + i) % auswahl.length];
             push(extinf({
                 id: `${movie.id}-${slugify(category.name)}`,
                 name: movie.title,
@@ -399,8 +411,11 @@ const main = () => {
 
     // --- Series -----------------------------------------------------------
     SERIES_CATEGORIES.forEach((category) => {
+        const showAuswahl = category.brands
+            ? shows.filter((sh) => category.brands.includes(sh.brand))
+            : shows;
         category.shows.forEach((showIndex) => {
-            const show = shows[showIndex % shows.length];
+            const show = showAuswahl[showIndex % showAuswahl.length];
             for (let season = 1; season <= category.seasons; season++) {
                 for (let episode = 1; episode <= category.episodes; episode++) {
                     const flat = (season - 1) * category.episodes + (episode - 1);
