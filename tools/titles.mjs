@@ -38,123 +38,123 @@ export const BRANDS = [
 export const BRAND_ARTWORK = {
     northbound: {
         logo: 'northbound',
-        plot: 'Ein Fahrer bringt einen Konvoi über die letzte offene Passstraße nach Norden, bevor der Winter sie für Monate schließt. Als der Funk abreißt, wird aus der Route eine Frage von Vertrauen — und aus dem Wetter der kleinste seiner Gegner.',
+        plot: 'A veteran driver agrees to lead a convoy over the last open mountain pass to the north before winter seals it shut for months. The cargo is urgent, the road is failing, and the crew he inherits barely trusts one another. When the radio goes dead halfway up, every decision becomes a question of who to believe, who to wait for and who to leave behind. Out on the ice he learns that the storm closing in is the smallest of his enemies — and that getting everyone home may cost him the one thing he promised never to give up.',
     },
     'midnight-circuit': {
         logo: 'midnight-circuit',
-        plot: 'In einer Stadt, die jede Bewegung protokolliert, sucht ein Ermittler nach einer Nacht, die aus allen Aufzeichnungen verschwunden ist. Je näher er kommt, desto klarer wird: Das System vergisst nichts — es wurde gebeten, sich zu erinnern.',
+        plot: 'In a city that records every step its citizens take, one night has vanished from every camera, log and memory. A tired investigator is handed the gap as a routine glitch and quickly realises it is anything but. The closer he comes to what happened in those missing hours, the more doors close around him, and the more familiar the faces in the shadows become. Nothing in this city is ever forgotten — someone simply asked the system to remember it differently, and now it wants to know why he keeps asking.',
     },
     'silent-atlas': {
         logo: 'silent-atlas',
-        plot: 'Eine alte Seekarte führt an eine Küste, die auf keiner heutigen Karte steht. Was als Expedition beginnt, wird zur Suche nach den Leuten, die dort einmal gelebt haben — und nach dem Grund, warum niemand ihre Spuren aufschreiben wollte.',
+        plot: 'An old sea chart leads a small expedition to a stretch of coast that appears on no modern map. What begins as a survey of cliffs and tides turns into a search for the people who once lived there, whose houses still stand but whose names were never written down. Guided by fragments of songs, carved stones and the stubborn memory of one elderly fisherman, the team pieces together a story that someone worked very hard to erase — and a reason why it might be kinder to leave it that way.',
     },
     'ashes-of-tomorrow': {
         logo: 'ashes-of-tomorrow',
-        plot: 'Jahre nach dem Ende sammelt eine Überlebende ein, was von den Städten übrig ist: Werkzeuge, Namen, Erinnerungen. Als aus dem Süden ein Funkspruch kommt, muss sie entscheiden, ob die Zukunft ein Ort ist, zu dem man zurückgeht.',
+        plot: 'Years after the collapse, a lone survivor travels between the ruins of empty cities, collecting what is left behind: tools, seeds, names scratched into walls and the stories that go with them. Her routine is quiet and careful until a radio message crackles in from the south, repeating her own name. Following it means leaving the only safe place she knows and crossing land nobody has returned from. She has to decide whether the future is somewhere you can go back to — or something you have to build with strangers you do not yet trust.',
     },
     'neon-harbor': {
         logo: 'neon-harbor',
-        plot: 'Zwei Ermittler, ein Hafen, eine Leiche zwischen den Containern. Ihre Fälle laufen auf dieselbe Reederei zu — und auf eine Nachtschicht, in der beide entscheiden müssen, wem im Revier sie noch trauen.',
+        plot: 'Two detectives from rival precincts, one rain-soaked harbour and a body found between stacked shipping containers. Their cases have nothing in common — until both trails lead to the same shipping company and a night shift that nobody on the payroll remembers working. As the evidence piles up, so do the warnings from above. Somewhere in their own departments someone is feeding the other side, and before dawn both of them will have to choose which colleague they are still willing to trust with their lives.',
     },
     'after-the-fall': {
         logo: 'after-the-fall',
-        plot: 'Dreißig Jahre nachdem die Städte leer wurden, wächst zwischen den Hochhäusern ein Wald. Ein Kundschafter soll herausfinden, wer die Signale sendet, die seit dem Frühjahr aus dem alten Zentrum kommen — und was aus denen wurde, die nie gegangen sind.',
+        plot: 'Thirty years after the great cities emptied, a forest has grown between the skyscrapers and the streets belong to deer and wild dogs. A young scout is sent from the settlements in the hills to find out who has been transmitting signals from the old city centre since spring. What she finds among the overgrown towers is a community that never left, living by rules of its own. They have questions about the outside world that her people have no good answers for — and a secret that could change why anyone left at all.',
     },
     'beyond-horizons': {
         logo: 'beyond-horizons',
-        plot: 'Eine Vermesserin zieht allein durch ein Hochtal, das auf keiner Karte richtig eingezeichnet ist. Je weiter sie kommt, desto mehr wird aus der Arbeit eine Auseinandersetzung mit der Frage, warum sie überhaupt losgegangen ist.',
+        plot: 'A surveyor sets out alone to map a high mountain valley that has never been charted properly. The work is slow and precise: measuring ridges, naming streams, sleeping under a sky that seems far too large. But the further she walks, the less the journey is about the land and the more it becomes a conversation with herself about the life she left in the city and the reasons she really left it. A quiet, sweeping story about distance, solitude and the courage it takes to finally turn around.',
     },
     'crimson-files': {
         logo: 'crimson-files',
-        plot: 'Eine Ermittlerin übernimmt einen Stapel Akten, den vor ihr drei Kollegen abgegeben haben. Die Fälle liegen Jahre auseinander und haben nichts gemeinsam — bis auf ein Detail, das in jedem Protokoll steht und das nie jemand aufgeschrieben haben wollte.',
+        plot: 'A newly promoted investigator inherits a stack of cold case files that three colleagues before her quietly handed back. The cases lie years apart, involve different victims and seem to share nothing at all — except for one small detail that appears in every single report and that nobody ever admits to having written down. As she follows it through old archives, sealed testimonies and reluctant witnesses, she begins to suspect that the files were never meant to be solved, only kept.',
     },
     'eclipse-protocol': {
         logo: 'eclipse-protocol',
-        plot: 'Eine Forschungsstation am Rand des Sonnensystems meldet sich nach acht Monaten Funkstille zurück — mit Daten, die niemand bestellt hat. Das Team, das nachsehen soll, findet eine Anlage vor, die weiterlief, als wäre nie jemand weggewesen.',
+        plot: 'A research station at the edge of the solar system suddenly comes back online after eight months of radio silence, transmitting data that nobody on Earth requested. The small team sent to investigate expects damage, a dead crew or a system failure. Instead they find a facility that kept running perfectly, as if no one had ever left. The longer they stay, the harder it becomes to tell which of the station\'s instructions come from the mission — and which come from something that has learned to write them.',
     },
     'iron-dawn': {
         logo: 'iron-dawn',
-        plot: 'Ein Bergungstrupp arbeitet sich durch eine Stadt, aus der die Front vor Wochen abgezogen ist. Ihr Auftrag lautet Material, ihre Listen füllen sich mit Namen — und irgendwann steht die Frage im Raum, wofür sie eigentlich noch aufräumen.',
+        plot: 'Weeks after the front has moved on, a salvage crew works its way through a shattered city to recover equipment the army left behind. Their orders speak only of material, but their lists fill up with names, letters and photographs found in the rubble. Between collapsed bridges, silent factories and the few civilians who stayed, the soldiers begin to ask what they are really cleaning up, and for whom. A tense and humane war drama about duty, memory and what remains when the fighting stops.',
     },
     'neon-district': {
         logo: 'neon-district',
-        plot: 'In einem Viertel, in dem jede Tür einen Datensatz braucht, lebt jemand ohne einen. Ein Kurier soll ihn finden, bevor die Verwaltung es tut — und merkt dabei, dass die Lücke in den Akten kein Fehler ist, sondern jemandes Arbeit.',
+        plot: 'In a district where every door, lift and streetlight requires a personal data record, one man lives without any record at all. A courier who knows every shortcut in the neon-lit maze is hired to find him before the administration does. The deeper she digs, the clearer it becomes that the gap in the files is not an error but someone\'s careful work — and that the people paying her are not the ones who should find him first. A stylish science-fiction thriller about identity, control and the freedom of being invisible.',
     },
     'northland-saga': {
         logo: 'northland-saga',
-        plot: 'Ein Schiffsführer kehrt nach zwei Wintern in eine Siedlung zurück, die ihn längst abgeschrieben hat. Was er mitbringt, reicht für den Frühling — was er verschweigt, entscheidet darüber, ob die Siedlung den nächsten Herbst erlebt.',
+        plot: 'After two hard winters at sea, a ship\'s captain returns to a northern settlement that had long given him up for dead. The cargo he brings home is enough to see the village through the spring, and the people welcome him as a hero. But what he chooses not to tell them about his voyage — the lands he saw, the bargain he made and the ships that may follow him — will decide whether the settlement survives the next autumn. An epic historical adventure about loyalty, power and the price of a secret.',
     },
     'only-forever': {
         logo: 'only-forever',
-        plot: 'Zwei Menschen, die sich in einer fremden Stadt über den Weg laufen, geben sich einen Abend. Aus dem Abend wird ein Sommer, und aus dem Sommer die Frage, wer von beiden bereit ist, sein bisheriges Leben dafür anders zu erzählen.',
+        plot: 'Two strangers cross paths in a foreign city and agree to share a single evening before going their separate ways. The evening turns into a week, the week into a summer, and the summer into the most honest time either of them has known. But both have lives waiting at home, promises already made and stories they have told about themselves for years. When the season ends, one of them has to decide whether they are ready to tell their life differently. A warm, bittersweet romance about timing and courage.',
     },
     'realms-awakened': {
         logo: 'realms-awakened',
-        plot: 'Ein Bote bringt eine Nachricht über ein Hochland, das seit Generationen keinen Herrscher mehr anerkennt. In jedem Tal wird ihm etwas anderes über den Krieg erzählt, den er ankündigen soll — und am Ende muss er entscheiden, welche Fassung er weiterträgt.',
+        plot: 'A royal messenger is sent across a wild highland that has refused to recognise any ruler for generations, carrying word of a war that is about to begin. In every valley he crosses he hears a different version of the conflict he is meant to announce — from farmers, rebels, priests and the lords who stand to gain from it. By the time he reaches the last fortress, he must decide which truth he will carry with him. A sweeping fantasy adventure about power, legends and the stories that start wars.',
     },
     'cosmo-crew': {
         logo: 'cosmo-crew',
-        plot: 'Eine Hundeschnauze, eine Katzenpfote und ein Roboter, der ständig alles doppelt kontrolliert: Die Crew soll nur eine Kiste zum Nachbarmond bringen. Unterwegs geht die Kiste auf — und darin sitzt jemand, der auch nicht weiß, wie er da hineingeraten ist.',
+        plot: 'A dog with a very big nose, a cat with very quick paws and a robot who checks everything at least twice make up the smallest delivery crew in the galaxy. Their job sounds simple: bring one box to the neighbouring moon. But halfway there the box pops open, and inside sits a small, confused passenger who has no idea how he got there or where he belongs. Now the crew has to find his home among the stars — and learns along the way that the best deliveries are the ones you never planned.',
     },
     lanternwood: {
         logo: 'lanternwood',
-        plot: 'Im Wald hinter dem Dorf gehen seit Tagen die Lichter an, obwohl niemand sie anzündet. Ein Mädchen folgt ihnen mit einer alten Laterne und einem Fuchs, der genau weiß, wo man nicht hintreten darf.',
+        plot: 'For days now, little lights have been glowing in the forest behind the village every night, even though nobody lights them. One curious girl sets out with her grandmother\'s old lantern to find out where they come from. She is joined by a clever fox who knows exactly where not to step, which paths are safe and which friendly creatures live among the roots. Together they discover a hidden world that needs their help before the lights go out for good. A gentle, magical adventure for the whole family.',
     },
     'skygarden-voyage': {
         logo: 'skygarden-voyage',
-        plot: 'Eine Erfinderin baut aus einem Bollerwagen und einem Heißluftballon ein Gefährt, das über die Wolken steigt. Oben treibt ein Garten, den seit hundert Jahren niemand gegossen hat — und er wartet ganz offensichtlich auf jemanden.',
+        plot: 'A young inventor builds a flying machine out of an old wooden cart, a patched hot-air balloon and a great deal of enthusiasm. On her very first flight she rises above the clouds and discovers a floating garden that nobody has watered for a hundred years. Strange plants, forgotten machines and a lonely gardening robot are waiting there — and they have clearly been waiting for someone just like her. A colourful, heart-warming animated adventure about curiosity, friendship and taking care of things.',
     },
     'night-critters': {
         logo: 'night-critters',
-        plot: 'Wenn im alten Herrenhaus das Licht ausgeht, fängt für Hase, Hund und Kater die Arbeit an: Sie räumen auf, was der Tag liegen ließ. Bis eine Tür auftaucht, die vorher nicht da war.',
+        plot: 'When the lights go out in the old manor house, the work begins for a rabbit, a dog and a cat: they tidy up everything the day has left behind, fix what is broken and make sure everyone sleeps soundly. It is a job they are proud of and one nobody ever notices. But one night a door appears in the hallway that was never there before, and behind it lies a part of the house none of them has ever seen. A funny, cosy animated adventure about teamwork, courage and the magic of night-time.',
     },
     'robo-und-nico': {
         logo: 'robo-und-nico',
-        plot: 'Nico findet in den Ruinen einen Roboter, der nur einen Satz kann: "Ich bringe dich nach Hause." Das Problem ist, dass er nicht sagt, wessen Zuhause er meint.',
+        plot: 'While exploring an old scrapyard, young Nico finds a friendly robot who can only say one sentence: I will take you home. There is just one problem — the robot never says whose home he means. So the two of them set off on a journey across rivers, towns and strange landscapes, meeting helpful and not-so-helpful characters along the way. Step by step Nico learns more about the robot\'s past, and the robot learns that home is sometimes less a place than the people you find on the way.',
     },
     skypals: {
         logo: 'skypals',
-        plot: 'Ein Hund mit Fliegerbrille, eine Katze als Navigatorin und ein Flugzeug, das schon bessere Tage gesehen hat. Ihre Post kommt immer an — auch wenn der Weg dahin selten der kürzeste ist.',
+        plot: 'A dog in flying goggles, a cat who reads maps better than anyone and a little aeroplane that has seen better days make up the most reliable mail service in the sky. Their letters and parcels always arrive — even if the route there is rarely the shortest. Every delivery turns into a new adventure over mountains, seas and busy cities, with surprise storms, lost parcels and new friends waiting at every stop. A cheerful animated series about friendship, flying and never giving up on a delivery.',
     },
     'black-hollow': {
         logo: 'black-hollow',
-        plot: 'Ein Dorf am Rand der Moore nimmt Besucher freundlich auf und lässt sie ungern wieder gehen. Eine Frau sucht ihre Schwester, die vor einem Jahr genau hier zuletzt gesehen wurde.',
+        plot: 'A remote village on the edge of the moors welcomes every visitor with warm meals and friendly smiles, and it rarely lets them leave again. A young woman arrives looking for her sister, who was last seen here exactly one year ago. The villagers are helpful, but their answers never quite match, and the old church bell rings at hours nobody admits to hearing. The longer she stays, the clearer it becomes that the village has kept its secret for generations — and that it has already chosen her to keep it next.',
     },
     'last-light-manor': {
         logo: 'last-light-manor',
-        plot: 'Das Herrenhaus steht seit dreißig Jahren leer, aber die Rechnungen für den Strom kommen weiter. Der Erbe fährt hin, um das zu klären, und findet in jedem Zimmer ein Licht, das brennt.',
+        plot: 'The old manor house has stood empty for thirty years, yet the electricity bills keep arriving every month. The young heir drives out to the countryside to settle the matter once and for all and sell the property. Instead he finds a house where a light is burning in every single room, doors that close by themselves and a family history that nobody in the village wants to talk about. Night after night the house shows him a little more — and it becomes clear that it has been waiting for him in particular.',
     },
     'the-weeping-pines': {
         logo: 'the-weeping-pines',
-        plot: 'In diesem Waldstück verschwinden keine Menschen — sie kommen zurück, nur eben nicht ganz. Ein Förster geht der Sache mit einer Taschenlampe und deutlich zu viel Zutrauen nach.',
+        plot: 'People do not disappear in this patch of forest — they come back, only not quite the same. When a hiker returns after three days without a scratch and without a single memory, a local forest ranger decides to look into the old stories himself, armed with a torch and far too much confidence. Among the whispering pines he finds marked trees, abandoned camps and a sound that seems to follow him home. A creepy, atmospheric horror story about the places nature would rather keep to itself.',
     },
     fogline: {
         logo: 'fogline',
-        plot: 'Wenn der Nebel über die Hafenmole zieht, hört man das Nebelhorn eines Schiffes, das seit vierzig Jahren nicht mehr fährt. Eine Journalistin will wissen, wer es bedient.',
+        plot: 'Whenever fog rolls in over the harbour pier, the whole town hears the horn of a ship that has not sailed for forty years. Most people have learned to ignore it. A persistent journalist does not, and she sets out to find out who is sounding it and why. Her search leads her through old shipping records, a sunken wreck and the silence of families who lost someone on the night the ship went down. The closer she gets to the answer, the thicker the fog becomes — and the closer the horn sounds.',
     },
     'midnight-clue': {
         logo: 'midnight-clue',
-        plot: 'Jede Nacht um Punkt zwölf liegt an derselben Straßenecke ein Hinweis. Eine Ermittlerin sammelt sie seit Wochen — und merkt, dass sie zusammen eine Frage ergeben, die an sie gerichtet ist.',
+        plot: 'Every night at exactly midnight, a new clue appears on the same street corner: a photograph, a key, a torn page from an old diary. A sharp-eyed detective has been collecting them for weeks without telling her superiors. When she finally lays them out side by side, she realises that together they form a question — and that the question is addressed directly to her. Racing against the clock and her own past, she has to find out who is leaving the clues before the last one is delivered.',
     },
     'the-hollow-key': {
         logo: 'the-hollow-key',
-        plot: 'Der Schlüssel aus dem Nachlass passt in kein Schloss des Hauses. Er passt in das Tor davor, und dahinter liegt ein Grundstück, das im Grundbuch nicht existiert.',
+        plot: 'Among the belongings of her late uncle, a young woman finds an old iron key that fits none of the locks in his house. It does, however, fit the rusty gate at the bottom of the garden — and behind that gate lies a piece of land that does not exist in any land register. Strange things begin to happen the moment she steps through: time moves differently, the neighbours act as if they knew her, and her uncle\'s notes suddenly make sense. A gripping mystery about inheritance, hidden places and doors better left closed.',
     },
     'aurora-sentinel': {
         logo: 'aurora-sentinel',
-        plot: 'Sie kann das Licht der Stadt in den Händen halten, und die Stadt weiß bis heute nicht, wem sie das verdankt. Als die Lichter zum ersten Mal ausgehen, muss sie sich entscheiden, ob sie länger unerkannt bleiben will.',
+        plot: 'She can hold the light of the entire city in her hands, and to this day the city has no idea who it has to thank for keeping it safe. By day she lives an ordinary life with an ordinary job; by night she watches over the streets in silence. But when the lights go out across the whole city for the very first time, someone is clearly testing her. To stop what is coming she will have to step out of the shadows — and decide whether she can protect the people she loves without revealing who she is.',
     },
     'nova-strike': {
         logo: 'nova-strike',
-        plot: 'Ein Blitz, der nicht vom Himmel kam, gibt einem Streifenpolizisten mehr Kraft, als eine Stadt verträgt. Seine Vorgesetzten wollen sie einsetzen, seine Nachbarn wollen nur ihre Ruhe.',
+        plot: 'A bolt of lightning that did not come from the sky gives an ordinary patrol officer more power than any city can handle. Overnight he can run faster than cars, lift what no one else can and hear trouble from miles away. His superiors see a weapon they want to use, the media see a headline and his neighbours simply want their quiet street back. Caught between duty, fame and the people he grew up with, he must learn what kind of hero he wants to be before someone else decides it for him.',
     },
     'shadow-vigil': {
         logo: 'shadow-vigil',
-        plot: 'Er arbeitet nachts, spricht mit niemandem und hinterlässt an jedem Tatort dasselbe Zeichen. Die Stadt hält ihn für ihren Schutz — bis jemand fragt, wovor er sie eigentlich beschützt.',
+        plot: 'He works only at night, speaks to no one and leaves the same symbol at every crime scene he walks away from. The city has come to see him as its silent protector, and crime in the old quarter has never been lower. But when a young reporter starts asking what exactly he is protecting the city from, the answers lead back to a crime from years ago that was never solved. A dark, gripping action thriller about justice, revenge and the thin line between guardian and hunter.',
     },
     'shattered-lies': {
         logo: 'shattered-lies',
-        plot: 'Eine Anwältin erkennt in einer Zeugenaussage ihre eigene Kindheit wieder. Je sauberer sie den Fall führt, desto klarer wird, dass sie ihn nur gewinnen kann, wenn sie die Version aufgibt, mit der ihre Familie seit zwanzig Jahren lebt.',
+        plot: 'A successful lawyer recognises her own childhood in the testimony of a witness in a case she has just taken on. The more carefully she builds her case, the clearer it becomes that she can only win if she lets go of the version of events her family has told for twenty years. Between courtroom battles, old letters and a brother who refuses to talk, she has to decide what matters more: winning the case or protecting the story that holds her family together. A gripping legal drama about truth, loyalty and the lies we live with.',
     },
 };
 
@@ -514,36 +514,36 @@ export const SERIES_TITLES = {
 // Generator deterministisch aus dem Titel abgeleitet, also bei jedem Bau gleich.
 // ---------------------------------------------------------------------------
 export const BRAND_FACTS = {
-    northbound:          { genres: ['Abenteuer', 'Thriller'],        age: '12', minuten: [96, 128], wertung: [6.4, 7.9] },
+    northbound:          { genres: ['Adventure', 'Thriller'],        age: '12', minuten: [96, 128], wertung: [6.4, 7.9] },
     'midnight-circuit':  { genres: ['Science Fiction', 'Thriller'],  age: '16', minuten: [104, 141], wertung: [6.8, 8.4] },
-    'silent-atlas':      { genres: ['Abenteuer', 'Dokumentation'],   age: '6',  minuten: [88, 119], wertung: [6.9, 8.2] },
+    'silent-atlas':      { genres: ['Adventure', 'Documentary'],   age: '6',  minuten: [88, 119], wertung: [6.9, 8.2] },
     'ashes-of-tomorrow': { genres: ['Science Fiction', 'Drama'],     age: '16', minuten: [101, 137], wertung: [6.2, 7.8] },
-    'neon-harbor':       { genres: ['Krimi', 'Thriller'],            age: '16', minuten: [94, 126], wertung: [6.5, 8.0] },
+    'neon-harbor':       { genres: ['Crime', 'Thriller'],            age: '16', minuten: [94, 126], wertung: [6.5, 8.0] },
     'after-the-fall':    { genres: ['Science Fiction', 'Drama'],     age: '12', minuten: [98, 133], wertung: [6.6, 8.1] },
-    'beyond-horizons':   { genres: ['Abenteuer', 'Drama'],           age: '6',  minuten: [92, 121], wertung: [6.7, 8.3] },
-    'crimson-files':     { genres: ['Krimi', 'Mystery'],             age: '16', minuten: [99, 134], wertung: [6.5, 8.2] },
+    'beyond-horizons':   { genres: ['Adventure', 'Drama'],           age: '6',  minuten: [92, 121], wertung: [6.7, 8.3] },
+    'crimson-files':     { genres: ['Crime', 'Mystery'],             age: '16', minuten: [99, 134], wertung: [6.5, 8.2] },
     'eclipse-protocol':  { genres: ['Science Fiction', 'Mystery'],   age: '12', minuten: [106, 144], wertung: [6.3, 8.0] },
-    'iron-dawn':         { genres: ['Kriegsfilm', 'Drama'],          age: '16', minuten: [108, 152], wertung: [6.6, 8.4] },
-    'neon-district':     { genres: ['Science Fiction', 'Krimi'],     age: '16', minuten: [97, 129], wertung: [6.4, 7.9] },
-    'northland-saga':    { genres: ['Historienfilm', 'Abenteuer'],   age: '16', minuten: [112, 158], wertung: [6.8, 8.5] },
-    'only-forever':      { genres: ['Liebesfilm', 'Drama'],          age: '6',  minuten: [89, 118], wertung: [6.1, 7.7] },
-    'realms-awakened':   { genres: ['Fantasy', 'Abenteuer'],         age: '12', minuten: [115, 161], wertung: [6.9, 8.6] },
+    'iron-dawn':         { genres: ['War', 'Drama'],          age: '16', minuten: [108, 152], wertung: [6.6, 8.4] },
+    'neon-district':     { genres: ['Science Fiction', 'Crime'],     age: '16', minuten: [97, 129], wertung: [6.4, 7.9] },
+    'northland-saga':    { genres: ['History', 'Adventure'],   age: '16', minuten: [112, 158], wertung: [6.8, 8.5] },
+    'only-forever':      { genres: ['Romance', 'Drama'],          age: '6',  minuten: [89, 118], wertung: [6.1, 7.7] },
+    'realms-awakened':   { genres: ['Fantasy', 'Adventure'],         age: '12', minuten: [115, 161], wertung: [6.9, 8.6] },
     'shattered-lies':    { genres: ['Thriller', 'Drama'],            age: '16', minuten: [95, 127], wertung: [6.3, 8.1] },
-    'cosmo-crew':        { genres: ['Animation', 'Familie'],          age: '0',  minuten: [78, 96],   wertung: [6.8, 8.2] },
+    'cosmo-crew':        { genres: ['Animation', 'Family'],          age: '0',  minuten: [78, 96],   wertung: [6.8, 8.2] },
     lanternwood:         { genres: ['Animation', 'Fantasy'],          age: '6',  minuten: [82, 101],  wertung: [7.0, 8.4] },
-    'skygarden-voyage':  { genres: ['Animation', 'Abenteuer'],        age: '0',  minuten: [80, 98],   wertung: [6.9, 8.3] },
-    'night-critters':    { genres: ['Animation', 'Familie'],          age: '0',  minuten: [76, 94],   wertung: [6.7, 8.1] },
+    'skygarden-voyage':  { genres: ['Animation', 'Adventure'],        age: '0',  minuten: [80, 98],   wertung: [6.9, 8.3] },
+    'night-critters':    { genres: ['Animation', 'Family'],          age: '0',  minuten: [76, 94],   wertung: [6.7, 8.1] },
     'robo-und-nico':     { genres: ['Animation', 'Science Fiction'],  age: '6',  minuten: [84, 103],  wertung: [7.1, 8.5] },
-    skypals:             { genres: ['Animation', 'Abenteuer'],        age: '0',  minuten: [74, 92],   wertung: [6.6, 8.0] },
+    skypals:             { genres: ['Animation', 'Adventure'],        age: '0',  minuten: [74, 92],   wertung: [6.6, 8.0] },
     'black-hollow':      { genres: ['Horror', 'Mystery'],             age: '16', minuten: [93, 122],  wertung: [6.0, 7.6] },
     'last-light-manor':  { genres: ['Horror', 'Thriller'],            age: '16', minuten: [96, 126],  wertung: [6.2, 7.8] },
     'the-weeping-pines': { genres: ['Horror', 'Mystery'],             age: '18', minuten: [90, 118],  wertung: [5.9, 7.5] },
     fogline:             { genres: ['Mystery', 'Thriller'],           age: '12', minuten: [98, 130],  wertung: [6.5, 8.1] },
-    'midnight-clue':     { genres: ['Mystery', 'Krimi'],              age: '12', minuten: [95, 127],  wertung: [6.7, 8.3] },
+    'midnight-clue':     { genres: ['Mystery', 'Crime'],              age: '12', minuten: [95, 127],  wertung: [6.7, 8.3] },
     'the-hollow-key':    { genres: ['Mystery', 'Drama'],              age: '12', minuten: [100, 133], wertung: [6.6, 8.2] },
     'aurora-sentinel':   { genres: ['Action', 'Fantasy'],             age: '12', minuten: [110, 148], wertung: [6.4, 8.0] },
     'nova-strike':       { genres: ['Action', 'Science Fiction'],     age: '12', minuten: [106, 143], wertung: [6.3, 7.9] },
-    'shadow-vigil':      { genres: ['Action', 'Krimi'],               age: '16', minuten: [108, 146], wertung: [6.5, 8.2] },
+    'shadow-vigil':      { genres: ['Action', 'Crime'],               age: '16', minuten: [108, 146], wertung: [6.5, 8.2] },
 };
 
 // Erfundene Namen für Besetzung und Regie.
